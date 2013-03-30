@@ -11,39 +11,40 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicCompanyDaoImpl {
+public class BasicVisaDaoImpl {
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Transactional(readOnly=true)
-	public List<BasicCompany> findAll() {
+	public List<BasicVisa> findAll() {
 		// TODO Auto-generated method stub
-		Query query = entityManager.createQuery("FROM BasicCompany");
+		Query query = entityManager.createQuery("FROM BasicVisa");
 		return query.getResultList();
 	}
 
 	@Transactional(readOnly=true)
-	public BasicCompany findById(Integer basicCompanyCode) {
+	public BasicVisa findById(Integer BasicVisaCode) {
 		// TODO Auto-generated method stub
-		return entityManager.find(BasicCompany.class, basicCompanyCode);
+		return entityManager.find(BasicVisa.class, BasicVisaCode);
+		
 	}
 
 	@Transactional(readOnly=true)
-	public void delete(Integer basicCompanyCode) {
+	public void delete(Integer BasicVisaCode) {
 		// TODO Auto-generated method stub
-		BasicCompany basisCompany = entityManager.find(BasicCompany.class, basicCompanyCode);
-		entityManager.remove(basisCompany);
+		BasicVisa basisGroup = entityManager.find(BasicVisa.class, BasicVisaCode);
+		entityManager.remove(basisGroup);
 	}
 
 	@Transactional(readOnly=true)
-	public BasicCompany save(BasicCompany basicCompany) {
+	public BasicVisa save(BasicVisa BasicVisa) {
 		// TODO Auto-generated method stub
-		if(basicCompany.getBasicCompanyCode() == null){
-			entityManager.persist(basicCompany);
-			return basicCompany;
+		if(BasicVisa.getBasicVisaCode() == null){
+			entityManager.persist(BasicVisa);
+			return BasicVisa;
 		}else{
-			return entityManager.merge(basicCompany);
+			return entityManager.merge(BasicVisa);
 		}
 	}
 

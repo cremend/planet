@@ -21,9 +21,9 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicVisa {
 	
 	@Id
-	@Column(name="BASIC_VISA_TYPE")
+	@Column(name="BASIC_VISA_CODE")
 	@GeneratedValue
-	private Integer basicVisaType;
+	private Integer basicVisaCode;
 
 	@Column(name="BASIC_VISA_NAME")
 	private Integer basicVisaName;
@@ -36,12 +36,12 @@ public class BasicVisa {
 	}
 
 	//Getters & Setters
-	public Integer getBasicVisaType() {
-		return basicVisaType;
+	public Integer getBasicVisaCode() {
+		return basicVisaCode;
 	}
 
-	public void setBasicVisaType(Integer basicVisaType) {
-		this.basicVisaType = basicVisaType;
+	public void setBasicVisaType(Integer basicVisaCode) {
+		this.basicVisaCode = basicVisaCode;
 	}
 
 	public Integer getBasicVisaName() {

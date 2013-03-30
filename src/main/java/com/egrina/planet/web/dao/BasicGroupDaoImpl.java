@@ -20,7 +20,6 @@ public class BasicGroupDaoImpl {
 	public List<BasicGroup> findAll() {
 		// TODO Auto-generated method stub
 		Query query = entityManager.createQuery("FROM BasicGroup");
-		
 		return query.getResultList();
 	}
 

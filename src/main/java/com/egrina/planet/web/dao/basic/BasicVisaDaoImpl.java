@@ -11,11 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicVisaDaoImpl {
+public class BasicVisaDaoImpl implements BasicVisaDao{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicVisa> findAll() {
         // TODO Auto-generated method stub
@@ -23,6 +24,7 @@ public class BasicVisaDaoImpl {
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicVisa findById(Integer BasicVisaCode) {
         // TODO Auto-generated method stub
@@ -30,6 +32,7 @@ public class BasicVisaDaoImpl {
 
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer BasicVisaCode) {
         // TODO Auto-generated method stub
@@ -37,6 +40,7 @@ public class BasicVisaDaoImpl {
         entityManager.remove(basisGroup);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicVisa save(BasicVisa BasicVisa) {
         // TODO Auto-generated method stub

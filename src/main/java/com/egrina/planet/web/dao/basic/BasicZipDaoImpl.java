@@ -11,11 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicZipDaoImpl {
+public class BasicZipDaoImpl implements BasicZipDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicZip> findAll() {
         // TODO Auto-generated method stub
@@ -24,6 +25,7 @@ public class BasicZipDaoImpl {
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicZip findById(Integer basicZipCode) {
         // TODO Auto-generated method stub
@@ -31,6 +33,7 @@ public class BasicZipDaoImpl {
 
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer basicZipCode) {
         // TODO Auto-generated method stub
@@ -38,6 +41,7 @@ public class BasicZipDaoImpl {
         entityManager.remove(basisZip);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicZip save(BasicZip basicZip) {
         // TODO Auto-generated method stub

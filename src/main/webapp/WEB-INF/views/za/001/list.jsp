@@ -37,6 +37,7 @@
     <tr>
         <th>Code</th>
         <th>Name</th>
+        <th>Event</th>
     </tr>
     </thead>
     <tbody>
@@ -44,6 +45,12 @@
         <tr>
             <td>${position.basicPositionCode}</td>
             <td>${position.basicPositionName}</td>
+            <td>
+                <c:url var="editUrl" value="/ZA/001/form/${position.basicPositionCode}"/>
+                <c:url var="deleteUrl" value="/ZA/001/form/${position.basicPositionCode}"/>
+                <button onclick="location.href='${editUrl}'" class="button1">Edit</button>
+                <button onclick="location.href='${deleteUrl}'" class="button1">Delete</button>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

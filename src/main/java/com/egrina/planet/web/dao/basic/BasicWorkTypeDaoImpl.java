@@ -11,11 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicWorkTypeDaoImpl {
+public class BasicWorkTypeDaoImpl implements BasicWorkTypeDao{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicWorkType> findAll() {
         // TODO Auto-generated method stub
@@ -24,6 +25,7 @@ public class BasicWorkTypeDaoImpl {
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicWorkType findById(Integer basicWorkTypeCode) {
         // TODO Auto-generated method stub
@@ -31,6 +33,7 @@ public class BasicWorkTypeDaoImpl {
 
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer basicWorkTypeCode) {
         // TODO Auto-generated method stub
@@ -38,6 +41,7 @@ public class BasicWorkTypeDaoImpl {
         entityManager.remove(basisWorkType);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicWorkType save(BasicWorkType basicWorkType) {
         // TODO Auto-generated method stub

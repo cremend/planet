@@ -1,11 +1,9 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
@@ -21,7 +19,6 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     public List<BasicPosition> findAll() {
         // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicPosition");
-
         return query.getResultList();
     }
 

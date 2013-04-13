@@ -10,22 +10,25 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicJobCategoryDaoImpl {
+public class BasicJobCategoryDaoImpl implements BasicJobCategoryDao{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicJobCategory> findAll() {
         Query query = entityManager.createQuery("FROM BasicJobCategory");
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicJobCategory findById(Integer basicJobCategoryCode) {
         return entityManager.find(BasicJobCategory.class, basicJobCategoryCode);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer basicJobCategoryCode) {
         BasicJobCategory basicJobCategory = entityManager.find(BasicJobCategory.class, basicJobCategoryCode);

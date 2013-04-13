@@ -11,11 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicNationDaoImpl {
+public class BasicNationDaoImpl implements BasicNationDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicNation> findAll() {
         // TODO Auto-generated method stub
@@ -23,6 +24,7 @@ public class BasicNationDaoImpl {
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicNation findById(Integer BasicNationCode) {
         // TODO Auto-generated method stub
@@ -30,6 +32,7 @@ public class BasicNationDaoImpl {
 
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer BasicNationCode) {
         // TODO Auto-generated method stub
@@ -37,6 +40,7 @@ public class BasicNationDaoImpl {
         entityManager.remove(basisGroup);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicNation save(BasicNation BasicNation) {
         // TODO Auto-generated method stub

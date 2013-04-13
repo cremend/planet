@@ -51,8 +51,6 @@ public class EmpSite {
 	@JoinColumn(name="BASIC_JOB_CATEGORY_CODE", nullable=false)
 	private BasicJobCategory basicJobCategory;
 	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empSitePk")	
-	private List<EmpSite> empSiteList;
 	
 	public EmpSite(){
 		

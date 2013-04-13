@@ -11,11 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicRoleDaoImpl {
+public class BasicRoleDaoImpl implements BasicRoleDao{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Override
     @Transactional(readOnly = true)
     public List<BasicRole> findAll() {
         // TODO Auto-generated method stub
@@ -23,6 +24,7 @@ public class BasicRoleDaoImpl {
         return query.getResultList();
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicRole findById(Integer BasicRoleCode) {
         // TODO Auto-generated method stub
@@ -30,6 +32,7 @@ public class BasicRoleDaoImpl {
 
     }
 
+    @Override
     @Transactional(readOnly = true)
     public void delete(Integer BasicRoleCode) {
         // TODO Auto-generated method stub
@@ -37,6 +40,7 @@ public class BasicRoleDaoImpl {
         entityManager.remove(basisGroup);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public BasicRole save(BasicRole BasicRole) {
         // TODO Auto-generated method stub

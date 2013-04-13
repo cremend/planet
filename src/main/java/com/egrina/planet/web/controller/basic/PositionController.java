@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -49,5 +50,28 @@ public class PositionController {
         model.asMap().clear();
         return "redirect:/ZA/001";
     }
-
+    
+    @RequestMapping(value = "/form/{PositionCode}", method = RequestMethod.GET)
+    public String form(@PathVariable(value = "PositionCode") Integer positionCode, Model model){
+    	model.addAttribute("position", basicPositionDao.findById(positionCode) );
+    	return "za/001/form";
+	}
+    
+    @RequestMapping(value = "/form/{PositionCode}", method = RequestMethod.POST)
+    public String form(@PathVariable(value = "PositionCode") Integer positionCode, @ModelAttribute("position") BasicPosition position, Model model ){
+    	position.setBasicPositionCode(positionCode);
+        basicPositionDao.save(position);
+        model.addAttribute("positionList", getAllPositionList());
+        model.asMap().clear();
+        return "redirect:/ZA/001";
+    }
+    
+    @RequestMapping(value = "/delete/{PositionCode}", method = RequestMethod.GET)
+    public String delete(@PathVariable(value = "PositionCode") Integer positionCode, Model model) {
+        basicPositionDao.delete(positionCode);
+        model.asMap().clear();
+        return "redirect:/ZA/001";
+    }
+    
+    
 }

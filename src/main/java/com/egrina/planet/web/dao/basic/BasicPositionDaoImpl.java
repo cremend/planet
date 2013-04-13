@@ -31,7 +31,7 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicPositionCode) {
         // TODO Auto-generated method stub
         BasicPosition basisPosition = entityManager.find(BasicPosition.class, basicPositionCode);
@@ -39,7 +39,7 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicPosition save(BasicPosition basicPosition) {
         // TODO Auto-generated method stub
         if (basicPosition.getBasicPositionCode() == null) {

@@ -47,7 +47,7 @@
             <td>${position.basicPositionName}</td>
             <td>
                 <c:url var="editUrl" value="/ZA/001/form/${position.basicPositionCode}"/>
-                <c:url var="deleteUrl" value="/ZA/001/form/${position.basicPositionCode}"/>
+                <c:url var="deleteUrl" value="/ZA/001/delete/${position.basicPositionCode}"/>
                 <button onclick="location.href='${editUrl}'" class="button1">Edit</button>
                 <button onclick="location.href='${deleteUrl}'" class="button1">Delete</button>
             </td>

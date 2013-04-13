@@ -12,7 +12,7 @@
 
 <c:url var="root" value="/"/>
 <c:url var="listUrl" value="/ZA/001"/>
-<c:url var="submitUrl" value="/ZA/001/form"/>
+<c:url var="submitUrl" value="/ZA/001/form/${position.basicPositionCode}"/>
 
 <html>
 <head>

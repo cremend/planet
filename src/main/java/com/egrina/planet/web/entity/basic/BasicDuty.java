@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -16,6 +17,7 @@ public class BasicDuty {
 
 	@Id
 	@Column(name = "BASIC_DUTY_CODE")
+	@GeneratedValue
 	private Integer basicDutyCode;
 
 	@Column(name = "BASIC_DUTY_NAME")

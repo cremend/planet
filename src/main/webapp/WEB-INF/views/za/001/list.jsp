@@ -21,7 +21,7 @@
 <header>
     <h2>PLANET_ZA001</h2>
 
-    <p>직위정보</p>
+    <p>직위 정보</p>
 
     <p>/za/001/list.jsp</p>
 </header>

@@ -39,7 +39,7 @@ public class GroupController {
 
     @RequestMapping(value = "/form", method = RequestMethod.GET)
     public String form(Model model) {
-        model.addAttribute("position", new BasicGroup());
+        model.addAttribute("group", new BasicGroup());
         return "za/002/form";
     }
 
@@ -53,7 +53,7 @@ public class GroupController {
     
     @RequestMapping(value = "/form/{GroupCode}", method = RequestMethod.GET)
     public String form(@PathVariable(value = "GroupCode") Integer groupCode, Model model){
-    	model.addAttribute("group", basicGroupDao.findById(groupCode) );
+    	model.addAttribute("group", basicGroupDao.findById(groupCode));
     	return "za/002/form";
 	}
     

@@ -47,7 +47,7 @@
             <td>${group.basicGroupName}</td>
             <td>
                 <c:url var="editUrl" value="/ZA/002/form/${group.basicGroupCode}"/>
-                <c:url var="deleteUrl" value="/ZA/002/delete/${group.basicGroupName}"/>
+                <c:url var="deleteUrl" value="/ZA/002/delete/${group.basicGroupCode}"/>
                 <button onclick="location.href='${editUrl}'" class="button1">Edit</button>
                 <button onclick="location.href='${deleteUrl}'" class="button1">Delete</button>
             </td>

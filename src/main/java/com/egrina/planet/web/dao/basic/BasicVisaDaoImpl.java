@@ -33,7 +33,7 @@ public class BasicVisaDaoImpl implements BasicVisaDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer BasicVisaCode) {
         // TODO Auto-generated method stub
         BasicVisa basisGroup = entityManager.find(BasicVisa.class, BasicVisaCode);
@@ -41,7 +41,7 @@ public class BasicVisaDaoImpl implements BasicVisaDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicVisa save(BasicVisa BasicVisa) {
         // TODO Auto-generated method stub
         if (BasicVisa.getBasicVisaCode() == null) {

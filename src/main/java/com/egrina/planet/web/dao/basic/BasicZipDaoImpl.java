@@ -34,7 +34,7 @@ public class BasicZipDaoImpl implements BasicZipDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicZipCode) {
         // TODO Auto-generated method stub
         BasicZip basisZip = entityManager.find(BasicZip.class, basicZipCode);
@@ -42,7 +42,7 @@ public class BasicZipDaoImpl implements BasicZipDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicZip save(BasicZip basicZip) {
         // TODO Auto-generated method stub
         if (basicZip.getBasicZipCode() == null) {

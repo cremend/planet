@@ -33,7 +33,7 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicGroupCode) {
         // TODO Auto-generated method stub
         BasicGroup basisGroup = entityManager.find(BasicGroup.class, basicGroupCode);
@@ -41,7 +41,7 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
     }
     
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicGroup save(BasicGroup basicGroup) {
         // TODO Auto-generated method stub
         if (basicGroup.getBasicGroupCode() == null) {

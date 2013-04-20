@@ -30,7 +30,7 @@ public class BasicCompanyDaoImpl implements BasicCompanyDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicCompanyCode) {
         // TODO Auto-generated method stub
         BasicCompany basisCompany = entityManager.find(BasicCompany.class, basicCompanyCode);
@@ -38,7 +38,7 @@ public class BasicCompanyDaoImpl implements BasicCompanyDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicCompany save(BasicCompany basicCompany) {
         // TODO Auto-generated method stub
         if (basicCompany.getBasicCompanyCode() == null) {

@@ -34,7 +34,7 @@ public class BasicTeamDaoImpl implements BasicTeamDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicTeamCode) {
         // TODO Auto-generated method stub
         BasicTeam basisTeam = entityManager.find(BasicTeam.class, basicTeamCode);
@@ -42,7 +42,7 @@ public class BasicTeamDaoImpl implements BasicTeamDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicTeam save(BasicTeam basicTeam) {
         // TODO Auto-generated method stub
         if (basicTeam.getBasicTeamCode() == null) {

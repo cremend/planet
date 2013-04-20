@@ -21,7 +21,6 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     public List<BasicDuty> findAll() {
         // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicDuty");
-
         return query.getResultList();
     }
 
@@ -34,7 +33,7 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicDutyCode) {
         // TODO Auto-generated method stub
         BasicDuty basisDuty = entityManager.find(BasicDuty.class, basicDutyCode);
@@ -42,7 +41,7 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicDuty save(BasicDuty basicDuty) {
         // TODO Auto-generated method stub
         if (basicDuty.getBasicDutyCode() == null) {

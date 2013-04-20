@@ -34,7 +34,7 @@ public class BasicWorkTypeDaoImpl implements BasicWorkTypeDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicWorkTypeCode) {
         // TODO Auto-generated method stub
         BasicWorkType basisWorkType = entityManager.find(BasicWorkType.class, basicWorkTypeCode);
@@ -42,7 +42,7 @@ public class BasicWorkTypeDaoImpl implements BasicWorkTypeDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicWorkType save(BasicWorkType basicWorkType) {
         // TODO Auto-generated method stub
         if (basicWorkType.getBasicWorkTypeCode() == null) {

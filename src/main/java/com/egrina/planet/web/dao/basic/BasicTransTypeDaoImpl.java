@@ -29,14 +29,14 @@ public class BasicTransTypeDaoImpl implements BasicTransTypeDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicTransTypeCode) {
         BasicTransType basicTransType = entityManager.find(BasicTransType.class, basicTransTypeCode);
         entityManager.remove(basicTransType);
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicTransType save(BasicTransType basicTransType) {
         if (basicTransType.getBasicTransTypeCode() == null) {
             entityManager.persist(basicTransType);

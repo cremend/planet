@@ -33,7 +33,7 @@ public class BasicNationDaoImpl implements BasicNationDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer BasicNationCode) {
         // TODO Auto-generated method stub
         BasicNation basisGroup = entityManager.find(BasicNation.class, BasicNationCode);
@@ -41,7 +41,7 @@ public class BasicNationDaoImpl implements BasicNationDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicNation save(BasicNation BasicNation) {
         // TODO Auto-generated method stub
         if (BasicNation.getBasicNationCode() == null) {

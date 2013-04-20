@@ -3,6 +3,7 @@ package com.egrina.planet.web.entity.rel;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,6 +16,7 @@ import com.egrina.planet.web.entity.emp.*;
 public class RelWorkTimeReport {
 
 	@Id
+	@GeneratedValue
 	@Column(name="REL_WORK_TIME_REPORT_PK")
 	private Integer relWorkTimeReportPk; 
 

@@ -21,6 +21,7 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicEmploy {
 	
 	@Id
+	@GeneratedValue
 	@Column(name="BASIC_EMPLOY_CODE")
 	private Integer basicEmployCode;
 	

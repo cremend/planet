@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Id;
@@ -18,6 +19,7 @@ import com.egrina.planet.web.entity.basic.*;
 public class EmpPosition {
 	
 	@Id
+	@GeneratedValue
 	@Column(name="EMP_POSITION_PK")
 	private Integer EmpPositionPk;
 

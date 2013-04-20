@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,6 +18,7 @@ import com.egrina.planet.web.entity.basic.BasicWorkType;
 public class EmpWorkTime {
 
 	@Id
+	@GeneratedValue
 	@Column(name="EMP_WORK_TIME_PK")
 	private Integer empWorkTimePk; 
 	

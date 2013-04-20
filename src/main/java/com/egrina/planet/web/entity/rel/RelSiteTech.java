@@ -3,6 +3,7 @@ package com.egrina.planet.web.entity.rel;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,6 +17,7 @@ import com.egrina.planet.web.entity.basic.*;
 public class RelSiteTech {
 
 	@Id
+	@GeneratedValue
 	@Column(name="REL_SITE_TECH_PK")
 	private Integer indexId;
 	

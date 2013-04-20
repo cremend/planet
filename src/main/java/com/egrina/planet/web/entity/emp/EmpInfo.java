@@ -19,6 +19,7 @@ import com.egrina.planet.web.entity.basic.*;
 public class EmpInfo {
 
 	@Id
+	@GeneratedValue
 	@Column(name="EMP_CODE")
 	private String empCode;
 	

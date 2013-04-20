@@ -19,53 +19,47 @@ import com.egrina.planet.web.entity.emp.*;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_ROLE")
+@Table(name = "T_BASIC_ROLE")
 public class BasicRole {
-	
-	@Id
-	@Column(name="BASIC_ROLE_CODE")
-	@GeneratedValue
-	private Integer basicRoleCode;
-	
 
-	@Column(name="BASIC_ROLE_NAME")
-	private String basicRoleName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicRole")
-	private List<EmpSite> empSiteList;	
-	
-	//Constructor
-	public BasicRole(){
-	}
-	
-	//Getters & Setters
-	public Integer getBasicRoleCode() {
-		return basicRoleCode;
-	}
+    @Id
+    @Column(name = "BASIC_ROLE_CODE")
+    @GeneratedValue
+    private Integer basicRoleCode;
 
-	public void setBasicRoleCode(Integer basicRoleCode) {
-		this.basicRoleCode = basicRoleCode;
-	}
+    @Column(name = "BASIC_ROLE_NAME")
+    private String basicRoleName;
 
-	public String getBasicRoleName() {
-		return basicRoleName;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicRole")
+    private List<EmpSite> empSiteList;
 
-	public void setBasicRoleName(String basicRoleName) {
-		this.basicRoleName = basicRoleName;
-	}
+    // Constructor
+    public BasicRole() {
+    }
 
-	public List<EmpSite> getEmpSiteList() {
-		return empSiteList;
-	}
+    // Getters & Setters
+    public Integer getBasicRoleCode() {
+        return basicRoleCode;
+    }
 
-	public void setEmpSiteList(List<EmpSite> empSiteList) {
-		this.empSiteList = empSiteList;
-	}
+    public void setBasicRoleCode(Integer basicRoleCode) {
+        this.basicRoleCode = basicRoleCode;
+    }
 
+    public String getBasicRoleName() {
+        return basicRoleName;
+    }
 
+    public void setBasicRoleName(String basicRoleName) {
+        this.basicRoleName = basicRoleName;
+    }
 
+    public List<EmpSite> getEmpSiteList() {
+        return empSiteList;
+    }
 
-	
-	
-	}
+    public void setEmpSiteList(List<EmpSite> empSiteList) {
+        this.empSiteList = empSiteList;
+    }
+
+}

@@ -11,39 +11,38 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.rel.*;
 
 @Entity
-@Table(name="T_BASIC_TECH")
+@Table(name = "T_BASIC_TECH")
 public class BasicTech {
 
-	@Id
-	@GeneratedValue
-	@Column(name="BASIC_TECH_CODE")
-	private Integer basicTechCode;
-	
-	@Column(name="BASIC_TECH_NAME")
-	private String basicTechName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicTechCode")
-	private List<RelSiteTech> relSiteTechList;
-	
-	public BasicTech(){
-	
-	}
+    @Id
+    @GeneratedValue
+    @Column(name = "BASIC_TECH_CODE")
+    private Integer basicTechCode;
 
-	public Integer getBasicTechCode() {
-		return basicTechCode;
-	}
+    @Column(name = "BASIC_TECH_NAME")
+    private String basicTechName;
 
-	public void setBasicTechCode(Integer basicTechCode) {
-		this.basicTechCode = basicTechCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTechCode")
+    private List<RelSiteTech> relSiteTechList;
 
-	public String getBasicTechName() {
-		return basicTechName;
-	}
+    public BasicTech() {
 
-	public void setBasicTechName(String basicTechName) {
-		this.basicTechName = basicTechName;
-	}
-	
-	
+    }
+
+    public Integer getBasicTechCode() {
+        return basicTechCode;
+    }
+
+    public void setBasicTechCode(Integer basicTechCode) {
+        this.basicTechCode = basicTechCode;
+    }
+
+    public String getBasicTechName() {
+        return basicTechName;
+    }
+
+    public void setBasicTechName(String basicTechName) {
+        this.basicTechName = basicTechName;
+    }
+
 }

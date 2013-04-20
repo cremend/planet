@@ -12,71 +12,71 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_REL_WORK_TIME_REPORT")
+@Table(name = "T_REL_WORK_TIME_REPORT")
 public class RelWorkTimeReport {
 
-	@Id
-	@GeneratedValue
-	@Column(name="REL_WORK_TIME_REPORT_PK")
-	private Integer relWorkTimeReportPk; 
+    @Id
+    @GeneratedValue
+    @Column(name = "REL_WORK_TIME_REPORT_PK")
+    private Integer relWorkTimeReportPk;
 
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_WOKR_TIME_PK", referencedColumnName = "EMP_WORK_TIME_PK", nullable=false)
-	private EmpWorkTime empWorkTimePk; 
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE1", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo1;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE2", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo2;
-	
-	@Column(name="RESULT")
-	private boolean result;
-	
-	public RelWorkTimeReport(){
-		
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_WOKR_TIME_PK", referencedColumnName = "EMP_WORK_TIME_PK", nullable = false)
+    private EmpWorkTime empWorkTimePk;
 
-	public Integer getRelWorkTimeReportPk() {
-		return relWorkTimeReportPk;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE1", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo1;
 
-	public void setRelWorkTimeReportPk(Integer relWorkTimeReportPk) {
-		this.relWorkTimeReportPk = relWorkTimeReportPk;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE2", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo2;
 
-	public EmpWorkTime getEmpWorkTimePk() {
-		return empWorkTimePk;
-	}
+    @Column(name = "RESULT")
+    private boolean result;
 
-	public void setEmpWorkTimePk(EmpWorkTime empWorkTimePk) {
-		this.empWorkTimePk = empWorkTimePk;
-	}
+    public RelWorkTimeReport() {
 
-	public EmpInfo getEmpInfo1() {
-		return empInfo1;
-	}
+    }
 
-	public void setEmpInfo1(EmpInfo empInfo1) {
-		this.empInfo1 = empInfo1;
-	}
+    public Integer getRelWorkTimeReportPk() {
+        return relWorkTimeReportPk;
+    }
 
-	public EmpInfo getEmpInfo2() {
-		return empInfo2;
-	}
+    public void setRelWorkTimeReportPk(Integer relWorkTimeReportPk) {
+        this.relWorkTimeReportPk = relWorkTimeReportPk;
+    }
 
-	public void setEmpInfo2(EmpInfo empInfo2) {
-		this.empInfo2 = empInfo2;
-	}
+    public EmpWorkTime getEmpWorkTimePk() {
+        return empWorkTimePk;
+    }
 
-	public boolean isResult() {
-		return result;
-	}
+    public void setEmpWorkTimePk(EmpWorkTime empWorkTimePk) {
+        this.empWorkTimePk = empWorkTimePk;
+    }
 
-	public void setResult(boolean result) {
-		this.result = result;
-	}
-	
+    public EmpInfo getEmpInfo1() {
+        return empInfo1;
+    }
+
+    public void setEmpInfo1(EmpInfo empInfo1) {
+        this.empInfo1 = empInfo1;
+    }
+
+    public EmpInfo getEmpInfo2() {
+        return empInfo2;
+    }
+
+    public void setEmpInfo2(EmpInfo empInfo2) {
+        this.empInfo2 = empInfo2;
+    }
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
 }

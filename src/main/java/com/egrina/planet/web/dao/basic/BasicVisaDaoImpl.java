@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicVisaDaoImpl implements BasicVisaDao{
+public class BasicVisaDaoImpl implements BasicVisaDao {
 
     @PersistenceContext
     private EntityManager entityManager;

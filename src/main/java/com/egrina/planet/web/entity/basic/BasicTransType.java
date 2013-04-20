@@ -14,59 +14,57 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_TRANS_TYPE")
+@Table(name = "T_BASIC_TRANS_TYPE")
 public class BasicTransType {
 
-	@Id
-	@Column(name="BASIC_TRANS_TYPE_CODE")
-	@GeneratedValue
-	private Integer basicTransTypeCode;
-	
-	@Column(name="BASIC_TRANS_TYPE_NAME")
-	private String basicTransTypeName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicTransType")
-	private List<EmpPass> empPassList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicTransType")
-	private List<EmpCharge1> empCharge1List;	
-	
-	//Constructor
-	public BasicTransType(){
-	}
+    @Id
+    @Column(name = "BASIC_TRANS_TYPE_CODE")
+    @GeneratedValue
+    private Integer basicTransTypeCode;
 
-	public Integer getBasicTransTypeCode() {
-		return basicTransTypeCode;
-	}
+    @Column(name = "BASIC_TRANS_TYPE_NAME")
+    private String basicTransTypeName;
 
-	public void setBasicTransTypeCode(Integer basicTransTypeCode) {
-		this.basicTransTypeCode = basicTransTypeCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTransType")
+    private List<EmpPass> empPassList;
 
-	public String getBasicTransTypeName() {
-		return basicTransTypeName;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTransType")
+    private List<EmpCharge1> empCharge1List;
 
-	public void setBasicTransTypeName(String basicTransTypeName) {
-		this.basicTransTypeName = basicTransTypeName;
-	}
+    // Constructor
+    public BasicTransType() {
+    }
 
-	public List<EmpPass> getEmpPassList() {
-		return empPassList;
-	}
+    public Integer getBasicTransTypeCode() {
+        return basicTransTypeCode;
+    }
 
-	public void setEmpPassList(List<EmpPass> empPassList) {
-		this.empPassList = empPassList;
-	}
+    public void setBasicTransTypeCode(Integer basicTransTypeCode) {
+        this.basicTransTypeCode = basicTransTypeCode;
+    }
 
-	public List<EmpCharge1> getEmpCharge1List() {
-		return empCharge1List;
-	}
+    public String getBasicTransTypeName() {
+        return basicTransTypeName;
+    }
 
-	public void setEmpCharge1List(List<EmpCharge1> empCharge1List) {
-		this.empCharge1List = empCharge1List;
-	}
+    public void setBasicTransTypeName(String basicTransTypeName) {
+        this.basicTransTypeName = basicTransTypeName;
+    }
 
+    public List<EmpPass> getEmpPassList() {
+        return empPassList;
+    }
 
-	
+    public void setEmpPassList(List<EmpPass> empPassList) {
+        this.empPassList = empPassList;
+    }
+
+    public List<EmpCharge1> getEmpCharge1List() {
+        return empCharge1List;
+    }
+
+    public void setEmpCharge1List(List<EmpCharge1> empCharge1List) {
+        this.empCharge1List = empCharge1List;
+    }
+
 }

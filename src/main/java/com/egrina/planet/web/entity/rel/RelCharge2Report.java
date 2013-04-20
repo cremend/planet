@@ -15,72 +15,71 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_REL_CHARGE2_REPORT")
+@Table(name = "T_REL_CHARGE2_REPORT")
 public class RelCharge2Report {
 
-	@Id
-	@Column(name="REL_CHARGE2_REPORT_PK")
-	@GeneratedValue
-	private Integer relCharge2ReportPk;
-	
-	@Column(name="RESULT")
-	private boolean result;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CHARGE2_PK", nullable=false)
-	private EmpCharge2 empCharge2;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE1", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo1;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE2", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo2;
-	
-	public RelCharge2Report(){
-		
-	}
+    @Id
+    @Column(name = "REL_CHARGE2_REPORT_PK")
+    @GeneratedValue
+    private Integer relCharge2ReportPk;
 
-	public EmpCharge2 getEmpCharge2() {
-		return empCharge2;
-	}
+    @Column(name = "RESULT")
+    private boolean result;
 
-	public void setEmpCharge2(EmpCharge2 empCharge2) {
-		this.empCharge2 = empCharge2;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CHARGE2_PK", nullable = false)
+    private EmpCharge2 empCharge2;
 
-	public boolean isResult() {
-		return result;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE1", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo1;
 
-	public void setResult(boolean result) {
-		this.result = result;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE2", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo2;
 
-	public Integer getRelCharge2ReportPk() {
-		return relCharge2ReportPk;
-	}
+    public RelCharge2Report() {
 
-	public void setRelCharge2ReportPk(Integer relCharge2ReportPk) {
-		this.relCharge2ReportPk = relCharge2ReportPk;
-	}
+    }
 
-	public EmpInfo getEmpInfo1() {
-		return empInfo1;
-	}
+    public EmpCharge2 getEmpCharge2() {
+        return empCharge2;
+    }
 
-	public void setEmpInfo1(EmpInfo empInfo1) {
-		this.empInfo1 = empInfo1;
-	}
+    public void setEmpCharge2(EmpCharge2 empCharge2) {
+        this.empCharge2 = empCharge2;
+    }
 
-	public EmpInfo getEmpInfo2() {
-		return empInfo2;
-	}
+    public boolean isResult() {
+        return result;
+    }
 
-	public void setEmpInfo2(EmpInfo empInfo2) {
-		this.empInfo2 = empInfo2;
-	}
-	
-    
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
+    public Integer getRelCharge2ReportPk() {
+        return relCharge2ReportPk;
+    }
+
+    public void setRelCharge2ReportPk(Integer relCharge2ReportPk) {
+        this.relCharge2ReportPk = relCharge2ReportPk;
+    }
+
+    public EmpInfo getEmpInfo1() {
+        return empInfo1;
+    }
+
+    public void setEmpInfo1(EmpInfo empInfo1) {
+        this.empInfo1 = empInfo1;
+    }
+
+    public EmpInfo getEmpInfo2() {
+        return empInfo2;
+    }
+
+    public void setEmpInfo2(EmpInfo empInfo2) {
+        this.empInfo2 = empInfo2;
+    }
+
 }

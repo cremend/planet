@@ -4,7 +4,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicZipDao {
-	public List<BasicZip> findAll();
+    public List<BasicZip> findAll();
 
     public BasicZip findById(Integer basicZipCode);
 

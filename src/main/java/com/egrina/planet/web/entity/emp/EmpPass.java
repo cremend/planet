@@ -16,137 +16,136 @@ import com.egrina.planet.web.entity.basic.*;
 import com.egrina.planet.web.entity.rel.*;
 
 @Entity
-@Table(name="T_EMP_PASS")
+@Table(name = "T_EMP_PASS")
 public class EmpPass {
 
-	@Id
-	@Column(name="EMP_PASS_PK")
-	@GeneratedValue
-	private Integer empPassPk;
-	
-	@Column(name="EMP_PASS_START_DATE")
-	private Date empPassStartDate;
-	
-	@Column(name="EMP_PASS_END_DATE")
-	private Date empPassEndDate;
-	
-	@Column(name="EMP_PASS_AMOUNT")
-	private Integer empPassAmount;
-	
-	@Column(name="EMP_PASS_LOCATION1")
-	private String empPassLocation1;
-	
-	@Column(name="EMP_PASS_LOCATION2")
-	private String empPassLocation2;
-	
-	@Column(name="EMP_PASS_FILE_PATH")
-	private String empPassFilePath;
-	
-	@Column(name="EMP_PASS_CONFIRM")
-	private boolean empPassConfirm;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE", nullable=false)
-	private EmpInfo empInfo;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_TRANS_TYPE_CODE", nullable=false)
-	private BasicTransType basicTransType;
+    @Id
+    @Column(name = "EMP_PASS_PK")
+    @GeneratedValue
+    private Integer empPassPk;
 
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empPass")	
-	private List<RelPassReport> relPassReportList;	
+    @Column(name = "EMP_PASS_START_DATE")
+    private Date empPassStartDate;
 
-	public EmpPass(){
-		
-	}
+    @Column(name = "EMP_PASS_END_DATE")
+    private Date empPassEndDate;
 
-	public Integer getEmpPassPk() {
-		return empPassPk;
-	}
+    @Column(name = "EMP_PASS_AMOUNT")
+    private Integer empPassAmount;
 
-	public void setEmpPassPk(Integer empPassPk) {
-		this.empPassPk = empPassPk;
-	}
+    @Column(name = "EMP_PASS_LOCATION1")
+    private String empPassLocation1;
 
-	public Date getEmpPassStartDate() {
-		return empPassStartDate;
-	}
+    @Column(name = "EMP_PASS_LOCATION2")
+    private String empPassLocation2;
 
-	public void setEmpPassStartDate(Date empPassStartDate) {
-		this.empPassStartDate = empPassStartDate;
-	}
+    @Column(name = "EMP_PASS_FILE_PATH")
+    private String empPassFilePath;
 
-	public Date getEmpPassEndDate() {
-		return empPassEndDate;
-	}
+    @Column(name = "EMP_PASS_CONFIRM")
+    private boolean empPassConfirm;
 
-	public void setEmpPassEndDate(Date empPassEndDate) {
-		this.empPassEndDate = empPassEndDate;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
-	public Integer getEmpPassAmount() {
-		return empPassAmount;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_TRANS_TYPE_CODE", nullable = false)
+    private BasicTransType basicTransType;
 
-	public void setEmpPassAmount(Integer empPassAmount) {
-		this.empPassAmount = empPassAmount;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empPass")
+    private List<RelPassReport> relPassReportList;
 
-	public String getEmpPassLocation1() {
-		return empPassLocation1;
-	}
+    public EmpPass() {
 
-	public void setEmpPassLocation1(String empPassLocation1) {
-		this.empPassLocation1 = empPassLocation1;
-	}
+    }
 
-	public String getEmpPassLocation2() {
-		return empPassLocation2;
-	}
+    public Integer getEmpPassPk() {
+        return empPassPk;
+    }
 
-	public void setEmpPassLocation2(String empPassLocation2) {
-		this.empPassLocation2 = empPassLocation2;
-	}
+    public void setEmpPassPk(Integer empPassPk) {
+        this.empPassPk = empPassPk;
+    }
 
-	public String getEmpPassFilePath() {
-		return empPassFilePath;
-	}
+    public Date getEmpPassStartDate() {
+        return empPassStartDate;
+    }
 
-	public void setEmpPassFilePath(String empPassFilePath) {
-		this.empPassFilePath = empPassFilePath;
-	}
+    public void setEmpPassStartDate(Date empPassStartDate) {
+        this.empPassStartDate = empPassStartDate;
+    }
 
-	public boolean isEmpPassConfirm() {
-		return empPassConfirm;
-	}
+    public Date getEmpPassEndDate() {
+        return empPassEndDate;
+    }
 
-	public void setEmpPassConfirm(boolean empPassConfirm) {
-		this.empPassConfirm = empPassConfirm;
-	}
+    public void setEmpPassEndDate(Date empPassEndDate) {
+        this.empPassEndDate = empPassEndDate;
+    }
 
-	public EmpInfo getEmpInfo() {
-		return empInfo;
-	}
+    public Integer getEmpPassAmount() {
+        return empPassAmount;
+    }
 
-	public void setEmpInfo(EmpInfo empInfo) {
-		this.empInfo = empInfo;
-	}
+    public void setEmpPassAmount(Integer empPassAmount) {
+        this.empPassAmount = empPassAmount;
+    }
 
-	public BasicTransType getBasicTransType() {
-		return basicTransType;
-	}
+    public String getEmpPassLocation1() {
+        return empPassLocation1;
+    }
 
-	public void setBasicTransType(BasicTransType basicTransType) {
-		this.basicTransType = basicTransType;
-	}
+    public void setEmpPassLocation1(String empPassLocation1) {
+        this.empPassLocation1 = empPassLocation1;
+    }
 
-	
-	public List<RelPassReport> getRelPassReportList() {
-		return relPassReportList;
-	}
+    public String getEmpPassLocation2() {
+        return empPassLocation2;
+    }
 
-	public void setRelPassReportList(List<RelPassReport> relPassReportList) {
-		this.relPassReportList = relPassReportList;
-	}
-	
+    public void setEmpPassLocation2(String empPassLocation2) {
+        this.empPassLocation2 = empPassLocation2;
+    }
+
+    public String getEmpPassFilePath() {
+        return empPassFilePath;
+    }
+
+    public void setEmpPassFilePath(String empPassFilePath) {
+        this.empPassFilePath = empPassFilePath;
+    }
+
+    public boolean isEmpPassConfirm() {
+        return empPassConfirm;
+    }
+
+    public void setEmpPassConfirm(boolean empPassConfirm) {
+        this.empPassConfirm = empPassConfirm;
+    }
+
+    public EmpInfo getEmpInfo() {
+        return empInfo;
+    }
+
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
+    }
+
+    public BasicTransType getBasicTransType() {
+        return basicTransType;
+    }
+
+    public void setBasicTransType(BasicTransType basicTransType) {
+        this.basicTransType = basicTransType;
+    }
+
+    public List<RelPassReport> getRelPassReportList() {
+        return relPassReportList;
+    }
+
+    public void setRelPassReportList(List<RelPassReport> relPassReportList) {
+        this.relPassReportList = relPassReportList;
+    }
+
 }

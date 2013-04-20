@@ -4,7 +4,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.BasicTeam;
 
 public interface BasicTeamDao {
-	public List<BasicTeam> findAll();
+    public List<BasicTeam> findAll();
 
     public BasicTeam findById(Integer basicTeamCode);
 

@@ -14,47 +14,46 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_JOB_CATEGORY")
+@Table(name = "T_BASIC_JOB_CATEGORY")
 public class BasicJobCategory {
 
-	@Id
-	@Column(name="BASIC_JOB_CATEGORY_CODE")
-	@GeneratedValue
-	private Integer basicJobCategoryCode;
-	
-	@Column(name="BASIC_JOB_CATEGORY_NAME")
-	private String basicJobCategoryName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicJobCategory")
-	private List<EmpSite> empSiteList;	
-	
-	public BasicJobCategory(){
-		
-	}
+    @Id
+    @Column(name = "BASIC_JOB_CATEGORY_CODE")
+    @GeneratedValue
+    private Integer basicJobCategoryCode;
 
-	public Integer getBasicJobCategoryCode() {
-		return basicJobCategoryCode;
-	}
+    @Column(name = "BASIC_JOB_CATEGORY_NAME")
+    private String basicJobCategoryName;
 
-	public void setBasicJobCategoryCode(Integer basicJobCategoryCode) {
-		this.basicJobCategoryCode = basicJobCategoryCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicJobCategory")
+    private List<EmpSite> empSiteList;
 
-	public String getBasicJobCategoryName() {
-		return basicJobCategoryName;
-	}
+    public BasicJobCategory() {
 
-	public void setBasicJobCategoryName(String basicJobCategoryName) {
-		this.basicJobCategoryName = basicJobCategoryName;
-	}
+    }
 
-	public List<EmpSite> getEmpSiteList() {
-		return empSiteList;
-	}
+    public Integer getBasicJobCategoryCode() {
+        return basicJobCategoryCode;
+    }
 
-	public void setEmpSiteList(List<EmpSite> empSiteList) {
-		this.empSiteList = empSiteList;
-	}
-	
-	
+    public void setBasicJobCategoryCode(Integer basicJobCategoryCode) {
+        this.basicJobCategoryCode = basicJobCategoryCode;
+    }
+
+    public String getBasicJobCategoryName() {
+        return basicJobCategoryName;
+    }
+
+    public void setBasicJobCategoryName(String basicJobCategoryName) {
+        this.basicJobCategoryName = basicJobCategoryName;
+    }
+
+    public List<EmpSite> getEmpSiteList() {
+        return empSiteList;
+    }
+
+    public void setEmpSiteList(List<EmpSite> empSiteList) {
+        this.empSiteList = empSiteList;
+    }
+
 }

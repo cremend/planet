@@ -12,71 +12,71 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_REL_HOLIDAY_APPLY_REPORT")
+@Table(name = "T_REL_HOLIDAY_APPLY_REPORT")
 public class RelHolidayApplyReport {
 
-	@Id
-	@GeneratedValue
-	@Column(name="REL_HOLIDAY_APPLY_REPORT")
-	private Integer relHolidayApplyReportPk; 
+    @Id
+    @GeneratedValue
+    @Column(name = "REL_HOLIDAY_APPLY_REPORT")
+    private Integer relHolidayApplyReportPk;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_HOLIDAY_APPLY_REPORT_PK", nullable=false)
-	private EmpHolidayApply empHolidayApplyReportPk; 
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE1", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo1;
-	
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE2", referencedColumnName = "EMP_CODE", nullable=false)
-	private EmpInfo empInfo2;
-	
-	@Column(name="RESULT")
-	private boolean result;
-	
-	public RelHolidayApplyReport(){
-		
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_HOLIDAY_APPLY_REPORT_PK", nullable = false)
+    private EmpHolidayApply empHolidayApplyReportPk;
 
-	public Integer getRelHolidayApplyReportPk() {
-		return relHolidayApplyReportPk;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE1", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo1;
 
-	public void setRelHolidayApplyReportPk(Integer relHolidayApplyReportPk) {
-		this.relHolidayApplyReportPk = relHolidayApplyReportPk;
-	}
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE2", referencedColumnName = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo2;
 
-	public EmpHolidayApply getEmpHolidayApplyReportPk() {
-		return empHolidayApplyReportPk;
-	}
+    @Column(name = "RESULT")
+    private boolean result;
 
-	public void setEmpHolidayApplyReportPk(EmpHolidayApply empHolidayApplyReportPk) {
-		this.empHolidayApplyReportPk = empHolidayApplyReportPk;
-	}
+    public RelHolidayApplyReport() {
 
-	public EmpInfo getEmpInfo1() {
-		return empInfo1;
-	}
+    }
 
-	public void setEmpInfo1(EmpInfo empInfo1) {
-		this.empInfo1 = empInfo1;
-	}
+    public Integer getRelHolidayApplyReportPk() {
+        return relHolidayApplyReportPk;
+    }
 
-	public EmpInfo getEmpInfo2() {
-		return empInfo2;
-	}
+    public void setRelHolidayApplyReportPk(Integer relHolidayApplyReportPk) {
+        this.relHolidayApplyReportPk = relHolidayApplyReportPk;
+    }
 
-	public void setEmpInfo2(EmpInfo empInfo2) {
-		this.empInfo2 = empInfo2;
-	}
+    public EmpHolidayApply getEmpHolidayApplyReportPk() {
+        return empHolidayApplyReportPk;
+    }
 
-	public boolean isResult() {
-		return result;
-	}
+    public void setEmpHolidayApplyReportPk(EmpHolidayApply empHolidayApplyReportPk) {
+        this.empHolidayApplyReportPk = empHolidayApplyReportPk;
+    }
 
-	public void setResult(boolean result) {
-		this.result = result;
-	}
-	
+    public EmpInfo getEmpInfo1() {
+        return empInfo1;
+    }
+
+    public void setEmpInfo1(EmpInfo empInfo1) {
+        this.empInfo1 = empInfo1;
+    }
+
+    public EmpInfo getEmpInfo2() {
+        return empInfo2;
+    }
+
+    public void setEmpInfo2(EmpInfo empInfo2) {
+        this.empInfo2 = empInfo2;
+    }
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
+    }
+
 }

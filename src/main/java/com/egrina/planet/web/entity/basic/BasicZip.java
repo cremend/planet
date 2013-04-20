@@ -17,46 +17,46 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_ZIP")
+@Table(name = "T_BASIC_ZIP")
 public class BasicZip {
-	
-	@Id
-	@Column(name="BASIC_ZIP_CODE")
-	@GeneratedValue
-	private Integer basicZipCode;
-	
-	@Column(name="BASIC_ZIP_NAME")
-	private String basicZipName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicZipCode")
-	private List<EmpInfo> empInfoList;			
-	
-	//Constructor
-	public BasicZip(){
-	}
 
-	public Integer getBasicZipCode() {
-		return basicZipCode;
-	}
+    @Id
+    @Column(name = "BASIC_ZIP_CODE")
+    @GeneratedValue
+    private Integer basicZipCode;
 
-	public void setBasicZipCode(Integer basicZipCode) {
-		this.basicZipCode = basicZipCode;
-	}
+    @Column(name = "BASIC_ZIP_NAME")
+    private String basicZipName;
 
-	public String getBasicZipName() {
-		return basicZipName;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicZipCode")
+    private List<EmpInfo> empInfoList;
 
-	public void setBasicZipName(String basicZipName) {
-		this.basicZipName = basicZipName;
-	}
+    // Constructor
+    public BasicZip() {
+    }
 
-	public List<EmpInfo> getEmpInfoList() {
-		return empInfoList;
-	}
+    public Integer getBasicZipCode() {
+        return basicZipCode;
+    }
 
-	public void setEmpInfoList(List<EmpInfo> empInfoList) {
-		this.empInfoList = empInfoList;
-	}
+    public void setBasicZipCode(Integer basicZipCode) {
+        this.basicZipCode = basicZipCode;
+    }
 
-	}
+    public String getBasicZipName() {
+        return basicZipName;
+    }
+
+    public void setBasicZipName(String basicZipName) {
+        this.basicZipName = basicZipName;
+    }
+
+    public List<EmpInfo> getEmpInfoList() {
+        return empInfoList;
+    }
+
+    public void setEmpInfoList(List<EmpInfo> empInfoList) {
+        this.empInfoList = empInfoList;
+    }
+
+}

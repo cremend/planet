@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicTransTypeDaoImpl implements BasicTransTypeDao{
+public class BasicTransTypeDaoImpl implements BasicTransTypeDao {
 
     @PersistenceContext
     private EntityManager entityManager;

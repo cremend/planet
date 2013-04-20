@@ -8,90 +8,85 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="t_emp_assign")
+@Table(name = "t_emp_assign")
 public class EmpAssign {
-	
-	@Id
-	@Column(name="emp_assign_idx")
-	@GeneratedValue
-	private long empAssignIdx;
-	
-	@Column(name="emp_code")
-	private String empCode;
-	
-	@Column(name="emp_team_code")
-	private String empTeamCode;
-	
-	@Column(name="emp_group_code")
-	private String empGroupCode;
-	
-	@Column(name="emp_start_day")
-	private Date empSday;
-	
-	@Column(name="emp_end_day")
-	private Date empEday;
-	
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empAssign")
-//	private List<Post> posts;
-	
-	
-	//Constructor
-	public EmpAssign(){
-		
-	}
-	
-	//Getters & Setters
-	
-	
 
+    @Id
+    @Column(name = "emp_assign_idx")
+    @GeneratedValue
+    private long empAssignIdx;
 
-	public long getEmpAssignIdx() {
-		return empAssignIdx;
-	}
+    @Column(name = "emp_code")
+    private String empCode;
 
-	public void setEmpAssignIdx(long empAssignIdx) {
-		this.empAssignIdx = empAssignIdx;
-	}
+    @Column(name = "emp_team_code")
+    private String empTeamCode;
 
-	public String getEmpCode() {
-		return empCode;
-	}
+    @Column(name = "emp_group_code")
+    private String empGroupCode;
 
-	public void setEmpCode(String empCode) {
-		this.empCode = empCode;
-	}
+    @Column(name = "emp_start_day")
+    private Date empSday;
 
-	public String getEmpTeamCode() {
-		return empTeamCode;
-	}
+    @Column(name = "emp_end_day")
+    private Date empEday;
 
-	public void setEmpTeamCode(String empTeamCode) {
-		this.empTeamCode = empTeamCode;
-	}
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empAssign")
+    // private List<Post> posts;
 
-	public String getEmpGroupCode() {
-		return empGroupCode;
-	}
+    // Constructor
+    public EmpAssign() {
 
-	public void setEmpGroupCode(String empGroupCode) {
-		this.empGroupCode = empGroupCode;
-	}
+    }
 
-	public Date getEmpSday() {
-		return empSday;
-	}
+    // Getters & Setters
 
-	public void setEmpSday(Date empSday) {
-		this.empSday = empSday;
-	}
+    public long getEmpAssignIdx() {
+        return empAssignIdx;
+    }
 
-	public Date getEmpEday() {
-		return empEday;
-	}
+    public void setEmpAssignIdx(long empAssignIdx) {
+        this.empAssignIdx = empAssignIdx;
+    }
 
-	public void setEmpEday(Date empEday) {
-		this.empEday = empEday;
-	}
+    public String getEmpCode() {
+        return empCode;
+    }
 
+    public void setEmpCode(String empCode) {
+        this.empCode = empCode;
+    }
+
+    public String getEmpTeamCode() {
+        return empTeamCode;
+    }
+
+    public void setEmpTeamCode(String empTeamCode) {
+        this.empTeamCode = empTeamCode;
+    }
+
+    public String getEmpGroupCode() {
+        return empGroupCode;
+    }
+
+    public void setEmpGroupCode(String empGroupCode) {
+        this.empGroupCode = empGroupCode;
+    }
+
+    public Date getEmpSday() {
+        return empSday;
+    }
+
+    public void setEmpSday(Date empSday) {
+        this.empSday = empSday;
+    }
+
+    public Date getEmpEday() {
+        return empEday;
+    }
+
+    public void setEmpEday(Date empEday) {
+        this.empEday = empEday;
+    }
 
 }

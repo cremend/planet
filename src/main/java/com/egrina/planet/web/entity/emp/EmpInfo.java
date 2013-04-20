@@ -15,311 +15,309 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
-@Table(name="T_EMP_INFO")
+@Table(name = "T_EMP_INFO")
 public class EmpInfo {
 
-	@Id
-	@GeneratedValue
-	@Column(name="EMP_CODE")
-	private String empCode;
-	
-	@Column(name="EMP_NAME")	
-	private String empName;
-	
-	@Column(name="EMP_GENDER")
-	private Integer empGender;
-	
-	@Column(name="EMP_BIRTH")
-	private Date empBirth;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_ZIP_CODE", nullable=false)
-	private BasicZip basicZipCode;
-	
-	@Column(name="EMP_ADDRESS")
-	private String empAddress;
-	
-	@Column(name="EMP_PHONE")
-	private Integer empPhone;
-	
-	@Column(name="EMP_PHONE2")
-	private Integer empPhone2;
-	
-	@Column(name="EMP_EMAIL")
-	private String empEmail;
-	
-	@Column(name="EMP_EMAIL2")
-	private String empEmail2;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpContract> empContractList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpSite> empSiteList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpWorkTime> empWorkTimeList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpPass> empPassList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpCharge1> empCharge1List;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpCharge2> empCharge2List;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpHoliday> empHolidayList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpHolidayApply> empHolidayApplyList;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpWorkReport> empWorkReportList;	
-	
-	//追加
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpPosition> empPositionList;
+    @Id
+    @GeneratedValue
+    @Column(name = "EMP_CODE")
+    private String empCode;
 
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpJoin> empJoinList;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpResidence> empResidenceList;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpPassport> empPassportList;
-		
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpDuty> empDutyList;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo")
-	private List<EmpEmploy> empEmployList;
-	
-	//20130309追加	
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
-//	private List<RelSiteTech> relSiteTechList1;
-//
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
-//	private List<RelSiteTech> relSiteTechList2;
-//	
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
-//	private List<RelWorkTimeReport> relWorkTimeReportList1;
-//
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
-//	private List<RelWorkTimeReport> relWorkTimeReportList2;
-//	
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
-//	private List<RelHolidayApplyReport> relHolidayApplyReportList1;
-//
-//	@OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
-//	private List<RelHolidayApplyReport> relHolidayApplyReportList2;
-	
-	public EmpInfo(){
-		
-	}
+    @Column(name = "EMP_NAME")
+    private String empName;
 
-	public String getEmpCode() {
-		return empCode;
-	}
+    @Column(name = "EMP_GENDER")
+    private Integer empGender;
 
-	public void setEmpCode(String empCode) {
-		this.empCode = empCode;
-	}
+    @Column(name = "EMP_BIRTH")
+    private Date empBirth;
 
-	public String getEmpName() {
-		return empName;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_ZIP_CODE", nullable = false)
+    private BasicZip basicZipCode;
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
+    @Column(name = "EMP_ADDRESS")
+    private String empAddress;
 
-	public Integer getEmpGender() {
-		return empGender;
-	}
+    @Column(name = "EMP_PHONE")
+    private Integer empPhone;
 
-	public void setEmpGender(Integer empGender) {
-		this.empGender = empGender;
-	}
+    @Column(name = "EMP_PHONE2")
+    private Integer empPhone2;
 
-	public Date getEmpBirth() {
-		return empBirth;
-	}
+    @Column(name = "EMP_EMAIL")
+    private String empEmail;
 
-	public void setEmpBirth(Date empBirth) {
-		this.empBirth = empBirth;
-	}
+    @Column(name = "EMP_EMAIL2")
+    private String empEmail2;
 
-	public BasicZip getBasicZipCode() {
-		return basicZipCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpContract> empContractList;
 
-	public void setBasicZipCode(BasicZip basicZipCode) {
-		this.basicZipCode = basicZipCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpSite> empSiteList;
 
-	public String getEmpAddress() {
-		return empAddress;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpWorkTime> empWorkTimeList;
 
-	public void setEmpAddress(String empAddress) {
-		this.empAddress = empAddress;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpPass> empPassList;
 
-	public Integer getEmpPhone() {
-		return empPhone;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpCharge1> empCharge1List;
 
-	public void setEmpPhone(Integer empPhone) {
-		this.empPhone = empPhone;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpCharge2> empCharge2List;
 
-	public Integer getEmpPhone2() {
-		return empPhone2;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpHoliday> empHolidayList;
 
-	public void setEmpPhone2(Integer empPhone2) {
-		this.empPhone2 = empPhone2;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpHolidayApply> empHolidayApplyList;
 
-	public String getEmpEmail() {
-		return empEmail;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpWorkReport> empWorkReportList;
 
-	public void setEmpEmail(String empEmail) {
-		this.empEmail = empEmail;
-	}
+    // 追加
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpPosition> empPositionList;
 
-	public String getEmpEmail2() {
-		return empEmail2;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpJoin> empJoinList;
 
-	public void setEmpEmail2(String empEmail2) {
-		this.empEmail2 = empEmail2;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpResidence> empResidenceList;
 
-	public List<EmpContract> getEmpContractList() {
-		return empContractList;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpPassport> empPassportList;
 
-	public void setEmpContractList(List<EmpContract> empContractList) {
-		this.empContractList = empContractList;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpDuty> empDutyList;
 
-	public List<EmpSite> getEmpSiteList() {
-		return empSiteList;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpEmploy> empEmployList;
 
-	public void setEmpSiteList(List<EmpSite> empSiteList) {
-		this.empSiteList = empSiteList;
-	}
+    // 20130309追加
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
+    // private List<RelSiteTech> relSiteTechList1;
+    //
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
+    // private List<RelSiteTech> relSiteTechList2;
+    //
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
+    // private List<RelWorkTimeReport> relWorkTimeReportList1;
+    //
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
+    // private List<RelWorkTimeReport> relWorkTimeReportList2;
+    //
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
+    // private List<RelHolidayApplyReport> relHolidayApplyReportList1;
+    //
+    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo2")
+    // private List<RelHolidayApplyReport> relHolidayApplyReportList2;
 
-	public List<EmpWorkTime> getEmpWorkTimeList() {
-		return empWorkTimeList;
-	}
+    public EmpInfo() {
 
-	public void setEmpWorkTimeList(List<EmpWorkTime> empWorkTimeList) {
-		this.empWorkTimeList = empWorkTimeList;
-	}
+    }
 
-	public List<EmpPass> getEmpPassList() {
-		return empPassList;
-	}
+    public String getEmpCode() {
+        return empCode;
+    }
 
-	public void setEmpPassList(List<EmpPass> empPassList) {
-		this.empPassList = empPassList;
-	}
+    public void setEmpCode(String empCode) {
+        this.empCode = empCode;
+    }
 
-	public List<EmpCharge1> getEmpCharge1List() {
-		return empCharge1List;
-	}
+    public String getEmpName() {
+        return empName;
+    }
 
-	public void setEmpCharge1List(List<EmpCharge1> empCharge1List) {
-		this.empCharge1List = empCharge1List;
-	}
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
 
-	public List<EmpCharge2> getEmpCharge2List() {
-		return empCharge2List;
-	}
+    public Integer getEmpGender() {
+        return empGender;
+    }
 
-	public void setEmpCharge2List(List<EmpCharge2> empCharge2List) {
-		this.empCharge2List = empCharge2List;
-	}
+    public void setEmpGender(Integer empGender) {
+        this.empGender = empGender;
+    }
 
-	public List<EmpHoliday> getEmpHolidayList() {
-		return empHolidayList;
-	}
+    public Date getEmpBirth() {
+        return empBirth;
+    }
 
-	public void setEmpHolidayList(List<EmpHoliday> empHolidayList) {
-		this.empHolidayList = empHolidayList;
-	}
+    public void setEmpBirth(Date empBirth) {
+        this.empBirth = empBirth;
+    }
 
-	public List<EmpHolidayApply> getEmpHolidayApplyList() {
-		return empHolidayApplyList;
-	}
+    public BasicZip getBasicZipCode() {
+        return basicZipCode;
+    }
 
-	public void setEmpHolidayApplyList(List<EmpHolidayApply> empHolidayApplyList) {
-		this.empHolidayApplyList = empHolidayApplyList;
-	}
+    public void setBasicZipCode(BasicZip basicZipCode) {
+        this.basicZipCode = basicZipCode;
+    }
 
-	public List<EmpWorkReport> getEmpWorkReportList() {
-		return empWorkReportList;
-	}
+    public String getEmpAddress() {
+        return empAddress;
+    }
 
-	public void setEmpWorkReportList(List<EmpWorkReport> empWorkReportList) {
-		this.empWorkReportList = empWorkReportList;
-	}
+    public void setEmpAddress(String empAddress) {
+        this.empAddress = empAddress;
+    }
 
-	public List<EmpPosition> getEmpPositionList() {
-		return empPositionList;
-	}
+    public Integer getEmpPhone() {
+        return empPhone;
+    }
 
-	public void setEmpPositionList(List<EmpPosition> empPositionList) {
-		this.empPositionList = empPositionList;
-	}
+    public void setEmpPhone(Integer empPhone) {
+        this.empPhone = empPhone;
+    }
 
-	public List<EmpJoin> getEmpJoinList() {
-		return empJoinList;
-	}
+    public Integer getEmpPhone2() {
+        return empPhone2;
+    }
 
-	public void setEmpJoinList(List<EmpJoin> empJoinList) {
-		this.empJoinList = empJoinList;
-	}
+    public void setEmpPhone2(Integer empPhone2) {
+        this.empPhone2 = empPhone2;
+    }
 
-	public List<EmpResidence> getEmpResidenceList() {
-		return empResidenceList;
-	}
+    public String getEmpEmail() {
+        return empEmail;
+    }
 
-	public void setEmpResidenceList(List<EmpResidence> empResidenceList) {
-		this.empResidenceList = empResidenceList;
-	}
+    public void setEmpEmail(String empEmail) {
+        this.empEmail = empEmail;
+    }
 
-	public List<EmpPassport> getEmpPassportList() {
-		return empPassportList;
-	}
+    public String getEmpEmail2() {
+        return empEmail2;
+    }
 
-	public void setEmpPassportList(List<EmpPassport> empPassportList) {
-		this.empPassportList = empPassportList;
-	}
+    public void setEmpEmail2(String empEmail2) {
+        this.empEmail2 = empEmail2;
+    }
 
-	public List<EmpDuty> getEmpDutyList() {
-		return empDutyList;
-	}
+    public List<EmpContract> getEmpContractList() {
+        return empContractList;
+    }
 
-	public void setEmpDutyList(List<EmpDuty> empDutyList) {
-		this.empDutyList = empDutyList;
-	}
+    public void setEmpContractList(List<EmpContract> empContractList) {
+        this.empContractList = empContractList;
+    }
 
-	public List<EmpEmploy> getEmpEmployList() {
-		return empEmployList;
-	}
+    public List<EmpSite> getEmpSiteList() {
+        return empSiteList;
+    }
 
-	public void setEmpEmployList(List<EmpEmploy> empEmployList) {
-		this.empEmployList = empEmployList;
-	}
+    public void setEmpSiteList(List<EmpSite> empSiteList) {
+        this.empSiteList = empSiteList;
+    }
 
+    public List<EmpWorkTime> getEmpWorkTimeList() {
+        return empWorkTimeList;
+    }
 
-	
+    public void setEmpWorkTimeList(List<EmpWorkTime> empWorkTimeList) {
+        this.empWorkTimeList = empWorkTimeList;
+    }
+
+    public List<EmpPass> getEmpPassList() {
+        return empPassList;
+    }
+
+    public void setEmpPassList(List<EmpPass> empPassList) {
+        this.empPassList = empPassList;
+    }
+
+    public List<EmpCharge1> getEmpCharge1List() {
+        return empCharge1List;
+    }
+
+    public void setEmpCharge1List(List<EmpCharge1> empCharge1List) {
+        this.empCharge1List = empCharge1List;
+    }
+
+    public List<EmpCharge2> getEmpCharge2List() {
+        return empCharge2List;
+    }
+
+    public void setEmpCharge2List(List<EmpCharge2> empCharge2List) {
+        this.empCharge2List = empCharge2List;
+    }
+
+    public List<EmpHoliday> getEmpHolidayList() {
+        return empHolidayList;
+    }
+
+    public void setEmpHolidayList(List<EmpHoliday> empHolidayList) {
+        this.empHolidayList = empHolidayList;
+    }
+
+    public List<EmpHolidayApply> getEmpHolidayApplyList() {
+        return empHolidayApplyList;
+    }
+
+    public void setEmpHolidayApplyList(List<EmpHolidayApply> empHolidayApplyList) {
+        this.empHolidayApplyList = empHolidayApplyList;
+    }
+
+    public List<EmpWorkReport> getEmpWorkReportList() {
+        return empWorkReportList;
+    }
+
+    public void setEmpWorkReportList(List<EmpWorkReport> empWorkReportList) {
+        this.empWorkReportList = empWorkReportList;
+    }
+
+    public List<EmpPosition> getEmpPositionList() {
+        return empPositionList;
+    }
+
+    public void setEmpPositionList(List<EmpPosition> empPositionList) {
+        this.empPositionList = empPositionList;
+    }
+
+    public List<EmpJoin> getEmpJoinList() {
+        return empJoinList;
+    }
+
+    public void setEmpJoinList(List<EmpJoin> empJoinList) {
+        this.empJoinList = empJoinList;
+    }
+
+    public List<EmpResidence> getEmpResidenceList() {
+        return empResidenceList;
+    }
+
+    public void setEmpResidenceList(List<EmpResidence> empResidenceList) {
+        this.empResidenceList = empResidenceList;
+    }
+
+    public List<EmpPassport> getEmpPassportList() {
+        return empPassportList;
+    }
+
+    public void setEmpPassportList(List<EmpPassport> empPassportList) {
+        this.empPassportList = empPassportList;
+    }
+
+    public List<EmpDuty> getEmpDutyList() {
+        return empDutyList;
+    }
+
+    public void setEmpDutyList(List<EmpDuty> empDutyList) {
+        this.empDutyList = empDutyList;
+    }
+
+    public List<EmpEmploy> getEmpEmployList() {
+        return empEmployList;
+    }
+
+    public void setEmpEmployList(List<EmpEmploy> empEmployList) {
+        this.empEmployList = empEmployList;
+    }
+
 }

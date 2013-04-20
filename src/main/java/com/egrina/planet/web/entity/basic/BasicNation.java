@@ -9,38 +9,35 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="T_BASIC_NATION")
+@Table(name = "T_BASIC_NATION")
 public class BasicNation {
-	
-	@Id
-	@Column(name="BASIC_NATION_CODE")
-	@GeneratedValue
-	private Integer basicNationCode;
-	
-	@Column(name="BASIC_NATION_NAME")
-	private String basicNationName;
-	
-	//Constructor
-	public BasicNation(){
-	}
 
-	public Integer getBasicNationCode() {
-		return basicNationCode;
-	}
+    @Id
+    @Column(name = "BASIC_NATION_CODE")
+    @GeneratedValue
+    private Integer basicNationCode;
 
-	public void setBasicNationCode(Integer basicNationCode) {
-		this.basicNationCode = basicNationCode;
-	}
+    @Column(name = "BASIC_NATION_NAME")
+    private String basicNationName;
 
-	public String getBasicNationName() {
-		return basicNationName;
-	}
+    // Constructor
+    public BasicNation() {
+    }
 
-	public void setBasicNationName(String basicNationName) {
-		this.basicNationName = basicNationName;
-	}
+    public Integer getBasicNationCode() {
+        return basicNationCode;
+    }
 
+    public void setBasicNationCode(Integer basicNationCode) {
+        this.basicNationCode = basicNationCode;
+    }
 
+    public String getBasicNationName() {
+        return basicNationName;
+    }
 
-	
-	}
+    public void setBasicNationName(String basicNationName) {
+        this.basicNationName = basicNationName;
+    }
+
+}

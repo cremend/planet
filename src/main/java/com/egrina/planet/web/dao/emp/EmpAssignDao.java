@@ -1,11 +1,13 @@
 package com.egrina.planet.web.dao.emp;
 
 import java.util.List;
-import com.egrina.planet.web.entity.emp.*;;
+import com.egrina.planet.web.entity.emp.*;
+
+;
 
 public interface EmpAssignDao {
 
-	public List<EmpAssign> findAll();
+    public List<EmpAssign> findAll();
 
     public EmpAssign findById(long empAssignIdx);
 

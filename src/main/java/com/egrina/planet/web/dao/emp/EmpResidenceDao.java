@@ -6,7 +6,7 @@ import com.egrina.planet.web.entity.emp.EmpResidence;
 
 public interface EmpResidenceDao {
 
-	public List<EmpResidence> findAll();
+    public List<EmpResidence> findAll();
 
     public EmpResidence findById(Integer empResidencePk);
 

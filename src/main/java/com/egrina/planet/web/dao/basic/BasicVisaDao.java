@@ -5,7 +5,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.BasicVisa;
 
 public interface BasicVisaDao {
-	public List<BasicVisa> findAll();
+    public List<BasicVisa> findAll();
 
     public BasicVisa findById(Integer basicVisaCode);
 

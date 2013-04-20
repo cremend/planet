@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicJobCategoryDaoImpl implements BasicJobCategoryDao{
+public class BasicJobCategoryDaoImpl implements BasicJobCategoryDao {
 
     @PersistenceContext
     private EntityManager entityManager;

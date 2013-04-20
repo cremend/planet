@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicCompanyDaoImpl implements BasicCompanyDao{
+public class BasicCompanyDaoImpl implements BasicCompanyDao {
 
     @PersistenceContext
     private EntityManager entityManager;

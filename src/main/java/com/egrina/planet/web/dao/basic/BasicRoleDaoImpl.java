@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicRoleDaoImpl implements BasicRoleDao{
+public class BasicRoleDaoImpl implements BasicRoleDao {
 
     @PersistenceContext
     private EntityManager entityManager;

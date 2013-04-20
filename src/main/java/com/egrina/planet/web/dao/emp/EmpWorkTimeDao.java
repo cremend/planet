@@ -5,7 +5,7 @@ import com.egrina.planet.web.entity.emp.*;
 
 public interface EmpWorkTimeDao {
 
-	public List<EmpWorkTime> findAll();
+    public List<EmpWorkTime> findAll();
 
     public EmpWorkTime findById(Integer empWorkTimePk);
 

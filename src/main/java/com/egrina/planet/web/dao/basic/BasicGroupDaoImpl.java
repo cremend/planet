@@ -23,7 +23,7 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
         Query query = entityManager.createQuery("FROM BasicGroup");
         return query.getResultList();
     }
-    
+
     @Override
     @Transactional(readOnly = true)
     public BasicGroup findById(Integer basicGroupCode) {
@@ -39,7 +39,7 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
         BasicGroup basisGroup = entityManager.find(BasicGroup.class, basicGroupCode);
         entityManager.remove(basisGroup);
     }
-    
+
     @Override
     @Transactional
     public BasicGroup save(BasicGroup basicGroup) {

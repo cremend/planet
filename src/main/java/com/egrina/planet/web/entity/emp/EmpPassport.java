@@ -12,69 +12,69 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="T_EMP_PASSPORT")
+@Table(name = "T_EMP_PASSPORT")
 public class EmpPassport {
-	
-	@Id
-	@GeneratedValue
-	@Column(name="EMP_PASSPORT_PK")
-	private Integer empPassportPk;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE", nullable=false)
-	private EmpInfo empInfo;
-	
-	@Column(name="EMP_PASSPORT_NO")
-	private String empPassportNo;
-	
-	@Column(name="EMP_PASSPORT_START_DATE")
-	private Calendar empPassportStartDate;
-	
-	@Column(name="EMP_PASSPORT_END_DATE")
-	private Calendar empPassportEndDate;
-	
-	public EmpPassport(){
-		
-	}
 
-	public Integer getEmpPassportPk() {
-		return empPassportPk;
-	}
+    @Id
+    @GeneratedValue
+    @Column(name = "EMP_PASSPORT_PK")
+    private Integer empPassportPk;
 
-	public void setEmpPassportPk(Integer empPassportPk) {
-		this.empPassportPk = empPassportPk;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
-	public EmpInfo getEmpInfo() {
-		return empInfo;
-	}
+    @Column(name = "EMP_PASSPORT_NO")
+    private String empPassportNo;
 
-	public void setEmpInfo(EmpInfo empInfo) {
-		this.empInfo = empInfo;
-	}
+    @Column(name = "EMP_PASSPORT_START_DATE")
+    private Calendar empPassportStartDate;
 
-	public String getEmpPassportNo() {
-		return empPassportNo;
-	}
+    @Column(name = "EMP_PASSPORT_END_DATE")
+    private Calendar empPassportEndDate;
 
-	public void setEmpPassportNo(String empPassportNo) {
-		this.empPassportNo = empPassportNo;
-	}
+    public EmpPassport() {
 
-	public Calendar getEmpPassportStartDate() {
-		return empPassportStartDate;
-	}
+    }
 
-	public void setEmpPassportStartDate(Calendar empPassportStartDate) {
-		this.empPassportStartDate = empPassportStartDate;
-	}
+    public Integer getEmpPassportPk() {
+        return empPassportPk;
+    }
 
-	public Calendar getEmpPassportEndDate() {
-		return empPassportEndDate;
-	}
+    public void setEmpPassportPk(Integer empPassportPk) {
+        this.empPassportPk = empPassportPk;
+    }
 
-	public void setEmpPassportEndDate(Calendar empPassportEndDate) {
-		this.empPassportEndDate = empPassportEndDate;
-	}
+    public EmpInfo getEmpInfo() {
+        return empInfo;
+    }
+
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
+    }
+
+    public String getEmpPassportNo() {
+        return empPassportNo;
+    }
+
+    public void setEmpPassportNo(String empPassportNo) {
+        this.empPassportNo = empPassportNo;
+    }
+
+    public Calendar getEmpPassportStartDate() {
+        return empPassportStartDate;
+    }
+
+    public void setEmpPassportStartDate(Calendar empPassportStartDate) {
+        this.empPassportStartDate = empPassportStartDate;
+    }
+
+    public Calendar getEmpPassportEndDate() {
+        return empPassportEndDate;
+    }
+
+    public void setEmpPassportEndDate(Calendar empPassportEndDate) {
+        this.empPassportEndDate = empPassportEndDate;
+    }
 
 }

@@ -11,82 +11,83 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import com.egrina.planet.web.entity.basic.*;
+
 @Entity
-@Table(name="T_EMP_RESIDENCE")
+@Table(name = "T_EMP_RESIDENCE")
 public class EmpResidence {
-	
-	@Id
-	@GeneratedValue
-	@Column(name="EMP_RESIDENCE_PK")
-	private Integer empResidencePk;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE", nullable=false)
-	private EmpInfo empInfo;
-	
-	@Column(name="EMP_RESIDENCE_NO")
-	private String empResidenceNo;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_VISA_CODE", nullable=false)
-	private BasicVisa basicVisa;
-	
-	@Column(name="EMP_RESIDENCE_START_DATE")
-	private Calendar empResidenceStartDate;
-	
-	@Column(name="EMP_RESIDENCE_END_DATE")
-	private Calendar empResidenceEndDate;
-	
-	public EmpResidence(){
-		
-	}
 
-	public Integer getEmpResidencePk() {
-		return empResidencePk;
-	}
+    @Id
+    @GeneratedValue
+    @Column(name = "EMP_RESIDENCE_PK")
+    private Integer empResidencePk;
 
-	public void setEmpResidencePk(Integer empResidencePk) {
-		this.empResidencePk = empResidencePk;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
-	public EmpInfo getEmpInfo() {
-		return empInfo;
-	}
+    @Column(name = "EMP_RESIDENCE_NO")
+    private String empResidenceNo;
 
-	public void setEmpInfo(EmpInfo empInfo) {
-		this.empInfo = empInfo;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_VISA_CODE", nullable = false)
+    private BasicVisa basicVisa;
 
-	public String getEmpResidenceNo() {
-		return empResidenceNo;
-	}
+    @Column(name = "EMP_RESIDENCE_START_DATE")
+    private Calendar empResidenceStartDate;
 
-	public void setEmpResidenceNo(String empResidenceNo) {
-		this.empResidenceNo = empResidenceNo;
-	}
+    @Column(name = "EMP_RESIDENCE_END_DATE")
+    private Calendar empResidenceEndDate;
 
-	public BasicVisa getBasicVisa() {
-		return basicVisa;
-	}
+    public EmpResidence() {
 
-	public void setBasicVisa(BasicVisa basicVisa) {
-		this.basicVisa = basicVisa;
-	}
+    }
 
-	public Calendar getEmpResidenceStartDate() {
-		return empResidenceStartDate;
-	}
+    public Integer getEmpResidencePk() {
+        return empResidencePk;
+    }
 
-	public void setEmpResidenceStartDate(Calendar empResidenceStartDate) {
-		this.empResidenceStartDate = empResidenceStartDate;
-	}
+    public void setEmpResidencePk(Integer empResidencePk) {
+        this.empResidencePk = empResidencePk;
+    }
 
-	public Calendar getEmpResidenceEndDate() {
-		return empResidenceEndDate;
-	}
+    public EmpInfo getEmpInfo() {
+        return empInfo;
+    }
 
-	public void setEmpResidenceEndDate(Calendar empResidenceEndDate) {
-		this.empResidenceEndDate = empResidenceEndDate;
-	}
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
+    }
+
+    public String getEmpResidenceNo() {
+        return empResidenceNo;
+    }
+
+    public void setEmpResidenceNo(String empResidenceNo) {
+        this.empResidenceNo = empResidenceNo;
+    }
+
+    public BasicVisa getBasicVisa() {
+        return basicVisa;
+    }
+
+    public void setBasicVisa(BasicVisa basicVisa) {
+        this.basicVisa = basicVisa;
+    }
+
+    public Calendar getEmpResidenceStartDate() {
+        return empResidenceStartDate;
+    }
+
+    public void setEmpResidenceStartDate(Calendar empResidenceStartDate) {
+        this.empResidenceStartDate = empResidenceStartDate;
+    }
+
+    public Calendar getEmpResidenceEndDate() {
+        return empResidenceEndDate;
+    }
+
+    public void setEmpResidenceEndDate(Calendar empResidenceEndDate) {
+        this.empResidenceEndDate = empResidenceEndDate;
+    }
 
 }

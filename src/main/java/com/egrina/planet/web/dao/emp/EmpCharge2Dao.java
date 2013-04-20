@@ -6,7 +6,7 @@ import com.egrina.planet.web.entity.emp.*;
 
 public interface EmpCharge2Dao {
 
-	public List<EmpCharge2> findAll();
+    public List<EmpCharge2> findAll();
 
     public EmpCharge2 findById(Integer empcharge2Pk);
 

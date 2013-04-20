@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class EmpAssign {
 
     @Id
-    @Column(name = "emp_assign_idx")
+    @Column(name = "emp_assign_pk")
     @GeneratedValue
-    private long empAssignIdx;
+    private Integer empAssignPk;
 
     @Column(name = "emp_code")
     private String empCode;
@@ -25,11 +25,11 @@ public class EmpAssign {
     @Column(name = "emp_group_code")
     private String empGroupCode;
 
-    @Column(name = "emp_start_day")
-    private Date empSday;
+    @Column(name = "emp_assign_start_date")
+    private Date empAssignStartDate;
 
-    @Column(name = "emp_end_day")
-    private Date empEday;
+    @Column(name = "emp_assign_end_Date")
+    private Date empAssignEndDate;
 
     // @OneToMany(fetch=FetchType.LAZY, mappedBy="empAssign")
     // private List<Post> posts;
@@ -39,14 +39,12 @@ public class EmpAssign {
 
     }
 
-    // Getters & Setters
-
-    public long getEmpAssignIdx() {
-        return empAssignIdx;
+    public Integer getEmpAssignPk() {
+        return empAssignPk;
     }
 
-    public void setEmpAssignIdx(long empAssignIdx) {
-        this.empAssignIdx = empAssignIdx;
+    public void setEmpAssignPk(Integer empAssignPk) {
+        this.empAssignPk = empAssignPk;
     }
 
     public String getEmpCode() {
@@ -73,20 +71,22 @@ public class EmpAssign {
         this.empGroupCode = empGroupCode;
     }
 
-    public Date getEmpSday() {
-        return empSday;
+    public Date getEmpAssignStartDate() {
+        return empAssignStartDate;
     }
 
-    public void setEmpSday(Date empSday) {
-        this.empSday = empSday;
+    public void setEmpAssignStartDate(Date empAssignStartDate) {
+        this.empAssignStartDate = empAssignStartDate;
     }
 
-    public Date getEmpEday() {
-        return empEday;
+    public Date getEmpAssignEndDate() {
+        return empAssignEndDate;
     }
 
-    public void setEmpEday(Date empEday) {
-        this.empEday = empEday;
+    public void setEmpAssignEndDate(Date empAssignEndDate) {
+        this.empAssignEndDate = empAssignEndDate;
     }
+
+    // Getters & Setters
 
 }

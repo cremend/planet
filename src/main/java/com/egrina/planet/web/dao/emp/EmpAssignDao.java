@@ -9,9 +9,9 @@ public interface EmpAssignDao {
 
     public List<EmpAssign> findAll();
 
-    public EmpAssign findById(long empAssignIdx);
+    public EmpAssign findById(Integer empAssignPk);
 
-    public void delete(long empAssignIdx);
+    public void delete(Integer empAssignPk);
 
     public EmpAssign save(EmpAssign empAssign);
 }

@@ -13,14 +13,15 @@ import com.egrina.planet.web.entity.emp.*;
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
-@Table(name = "T_REL_WORK_SITE_REPORT")
+@Table(name = "T_REL_SITE_TECH")
 public class RelSiteTech {
 
     @Id
-    @GeneratedValue
     @Column(name = "REL_SITE_TECH_PK")
+    @GeneratedValue
     private Integer relSiteTechPk;
-
+    
+    
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMP_SITE_PK", referencedColumnName = "EMP_SITE_PK", nullable = false)
     private EmpSite empSitePk;
@@ -33,13 +34,16 @@ public class RelSiteTech {
 
     }
 
+    
     public Integer getRelSiteTechPk() {
         return relSiteTechPk;
     }
 
+
     public void setRelSiteTechPk(Integer relSiteTechPk) {
         this.relSiteTechPk = relSiteTechPk;
     }
+
 
     public EmpSite getEmpSitePk() {
         return empSitePk;
@@ -57,4 +61,5 @@ public class RelSiteTech {
         this.basicTechCode = basicTechCode;
     }
 
+  
 }

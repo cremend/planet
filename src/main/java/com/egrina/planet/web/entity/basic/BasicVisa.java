@@ -40,7 +40,7 @@ public class BasicVisa {
         return basicVisaCode;
     }
 
-    public void setBasicVisaType(Integer basicVisaCode) {
+    public void setBasicVisaCode(Integer basicVisaCode) {
         this.basicVisaCode = basicVisaCode;
     }
 

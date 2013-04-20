@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: xperad
- * Date: 西暦.13/03/31
- * Time: 0:37
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: xperad Date: 西暦.13/03/31 Time: 0:37 To
+ * change this template use File | Settings | File Templates.
  */
 
 @Controller
@@ -50,28 +47,27 @@ public class GroupController {
         model.asMap().clear();
         return "redirect:/ZA/002";
     }
-    
+
     @RequestMapping(value = "/form/{GroupCode}", method = RequestMethod.GET)
-    public String form(@PathVariable(value = "GroupCode") Integer groupCode, Model model){
-    	model.addAttribute("group", basicGroupDao.findById(groupCode));
-    	return "za/002/form";
-	}
-    
+    public String form(@PathVariable(value = "GroupCode") Integer groupCode, Model model) {
+        model.addAttribute("group", basicGroupDao.findById(groupCode));
+        return "za/002/form";
+    }
+
     @RequestMapping(value = "/form/{GroupCode}", method = RequestMethod.POST)
-    public String form(@PathVariable(value = "GroupCode") Integer groupCode, @ModelAttribute("group") BasicGroup group, Model model ){
-    	group.setBasicGroupCode(groupCode);
-    	basicGroupDao.save(group);
+    public String form(@PathVariable(value = "GroupCode") Integer groupCode, @ModelAttribute("group") BasicGroup group, Model model) {
+        group.setBasicGroupCode(groupCode);
+        basicGroupDao.save(group);
         model.addAttribute("groupList", getAllGroupList());
         model.asMap().clear();
         return "redirect:/ZA/002";
     }
-    
+
     @RequestMapping(value = "/delete/{GroupCode}", method = RequestMethod.GET)
     public String delete(@PathVariable(value = "GroupCode") Integer groupCode, Model model) {
-    	basicGroupDao.delete(groupCode);
+        basicGroupDao.delete(groupCode);
         model.asMap().clear();
         return "redirect:/ZA/002";
     }
-    
-    
+
 }

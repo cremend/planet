@@ -13,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: xperad
- * Date: 西暦.13/03/31
- * Time: 0:37
- * To change this template use File | Settings | File Templates.
+ * Created with IntelliJ IDEA. User: xperad Date: 西暦.13/03/31 Time: 0:37 To
+ * change this template use File | Settings | File Templates.
  */
 
 @Controller
@@ -50,28 +47,27 @@ public class PositionController {
         model.asMap().clear();
         return "redirect:/ZA/001";
     }
-    
+
     @RequestMapping(value = "/form/{PositionCode}", method = RequestMethod.GET)
-    public String form(@PathVariable(value = "PositionCode") Integer positionCode, Model model){
-    	model.addAttribute("position", basicPositionDao.findById(positionCode) );
-    	return "za/001/form";
-	}
-    
+    public String form(@PathVariable(value = "PositionCode") Integer positionCode, Model model) {
+        model.addAttribute("position", basicPositionDao.findById(positionCode));
+        return "za/001/form";
+    }
+
     @RequestMapping(value = "/form/{PositionCode}", method = RequestMethod.POST)
-    public String form(@PathVariable(value = "PositionCode") Integer positionCode, @ModelAttribute("position") BasicPosition position, Model model ){
-    	position.setBasicPositionCode(positionCode);
+    public String form(@PathVariable(value = "PositionCode") Integer positionCode, @ModelAttribute("position") BasicPosition position, Model model) {
+        position.setBasicPositionCode(positionCode);
         basicPositionDao.save(position);
         model.addAttribute("positionList", getAllPositionList());
         model.asMap().clear();
         return "redirect:/ZA/001";
     }
-    
+
     @RequestMapping(value = "/delete/{PositionCode}", method = RequestMethod.GET)
     public String delete(@PathVariable(value = "PositionCode") Integer positionCode, Model model) {
         basicPositionDao.delete(positionCode);
         model.asMap().clear();
         return "redirect:/ZA/001";
     }
-    
-    
+
 }

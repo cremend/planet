@@ -6,7 +6,7 @@ import com.egrina.planet.web.entity.emp.*;
 
 public interface EmpWorkReportDao {
 
-	public List<EmpWorkReport> findAll();
+    public List<EmpWorkReport> findAll();
 
     public EmpWorkReport findById(Integer empWorkReportPk);
 

@@ -5,7 +5,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicRoleDao {
-	public List<BasicRole> findAll();
+    public List<BasicRole> findAll();
 
     public BasicRole findById(Integer basicRoleCode);
 

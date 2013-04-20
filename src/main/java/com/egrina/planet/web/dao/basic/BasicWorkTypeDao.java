@@ -4,7 +4,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicWorkTypeDao {
-	public List<BasicWorkType> findAll();
+    public List<BasicWorkType> findAll();
 
     public BasicWorkType findById(Integer basicWorkTypeCode);
 

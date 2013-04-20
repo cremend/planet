@@ -5,7 +5,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.BasicTransType;
 
 public interface BasicTransTypeDao {
-	public List<BasicTransType> findAll();
+    public List<BasicTransType> findAll();
 
     public BasicTransType findById(Integer basicTransTypeCode);
 

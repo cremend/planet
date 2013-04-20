@@ -5,8 +5,8 @@ import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicJobCategoryDao {
 
-	public List<BasicJobCategory> findAll();
-	
+    public List<BasicJobCategory> findAll();
+
     public BasicJobCategory findById(Integer basicJobCategoryCode);
 
     public void delete(Integer basicGroupCode);

@@ -5,7 +5,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicSiteDao {
-	public List<BasicSite> findAll();
+    public List<BasicSite> findAll();
 
     public BasicSite findById(Integer basicSiteCode);
 

@@ -16,47 +16,47 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
-@Table(name="T_EMP_EMPLOY")
+@Table(name = "T_EMP_EMPLOY")
 public class EmpEmploy {
-	
-	@Id
-	@Column(name="EMP_EMPLOY_PK")
-	@GeneratedValue
-	private Integer empEmployPk;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE", nullable=false)
-	private EmpInfo empInfo;
+    @Id
+    @Column(name = "EMP_EMPLOY_PK")
+    @GeneratedValue
+    private Integer empEmployPk;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_EMPLOY_CODE", nullable=false)
-	private BasicEmploy basicEmploy;
-	
-	public EmpEmploy(){
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
-	public Integer getEmpEmployPk() {
-		return empEmployPk;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_EMPLOY_CODE", nullable = false)
+    private BasicEmploy basicEmploy;
 
-	public void setEmpEmployPk(Integer empEmployPk) {
-		this.empEmployPk = empEmployPk;
-	}
+    public EmpEmploy() {
+    }
 
-	public EmpInfo getEmpInfo() {
-		return empInfo;
-	}
+    public Integer getEmpEmployPk() {
+        return empEmployPk;
+    }
 
-	public void setEmpInfo(EmpInfo empInfo) {
-		this.empInfo = empInfo;
-	}
+    public void setEmpEmployPk(Integer empEmployPk) {
+        this.empEmployPk = empEmployPk;
+    }
 
-	public BasicEmploy getBasicEmploy() {
-		return basicEmploy;
-	}
+    public EmpInfo getEmpInfo() {
+        return empInfo;
+    }
 
-	public void setBasicEmploy(BasicEmploy basicEmploy) {
-		this.basicEmploy = basicEmploy;
-	}
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
+    }
 
-	}
+    public BasicEmploy getBasicEmploy() {
+        return basicEmploy;
+    }
+
+    public void setBasicEmploy(BasicEmploy basicEmploy) {
+        this.basicEmploy = basicEmploy;
+    }
+
+}

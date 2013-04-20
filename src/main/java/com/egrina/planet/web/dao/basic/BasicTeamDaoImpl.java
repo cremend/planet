@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
 
 @Repository
-public class BasicTeamDaoImpl implements BasicTeamDao{
+public class BasicTeamDaoImpl implements BasicTeamDao {
 
     @PersistenceContext
     private EntityManager entityManager;

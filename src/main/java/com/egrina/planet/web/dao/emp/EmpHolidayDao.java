@@ -4,7 +4,7 @@ import java.util.List;
 import com.egrina.planet.web.entity.emp.EmpHoliday;
 
 public interface EmpHolidayDao {
-	public List<EmpHoliday> findAll();
+    public List<EmpHoliday> findAll();
 
     public EmpHoliday findById(Integer empHolidayPk);
 

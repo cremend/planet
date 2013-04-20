@@ -15,43 +15,43 @@ import com.egrina.planet.web.entity.emp.*;
 @Table(name = "T_BASIC_DUTY")
 public class BasicDuty {
 
-	@Id
-	@Column(name = "BASIC_DUTY_CODE")
-	@GeneratedValue
-	private Integer basicDutyCode;
+    @Id
+    @Column(name = "BASIC_DUTY_CODE")
+    @GeneratedValue
+    private Integer basicDutyCode;
 
-	@Column(name = "BASIC_DUTY_NAME")
-	private String basicDutyName;
+    @Column(name = "BASIC_DUTY_NAME")
+    private String basicDutyName;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "basicDutyCode")
-	private List<EmpDuty> empDutyList;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicDutyCode")
+    private List<EmpDuty> empDutyList;
 
-	public BasicDuty() {
+    public BasicDuty() {
 
-	}
+    }
 
-	public Integer getBasicDutyCode() {
-		return basicDutyCode;
-	}
+    public Integer getBasicDutyCode() {
+        return basicDutyCode;
+    }
 
-	public void setBasicDutyCode(Integer basicDutyCode) {
-		this.basicDutyCode = basicDutyCode;
-	}
+    public void setBasicDutyCode(Integer basicDutyCode) {
+        this.basicDutyCode = basicDutyCode;
+    }
 
-	public String getBasicDutyName() {
-		return basicDutyName;
-	}
+    public String getBasicDutyName() {
+        return basicDutyName;
+    }
 
-	public void setBasicDutyName(String basicDutyName) {
-		this.basicDutyName = basicDutyName;
-	}
+    public void setBasicDutyName(String basicDutyName) {
+        this.basicDutyName = basicDutyName;
+    }
 
-	public List<EmpDuty> getEmpDutyList() {
-		return empDutyList;
-	}
+    public List<EmpDuty> getEmpDutyList() {
+        return empDutyList;
+    }
 
-	public void setEmpDutyList(List<EmpDuty> empDutyList) {
-		this.empDutyList = empDutyList;
-	}
+    public void setEmpDutyList(List<EmpDuty> empDutyList) {
+        this.empDutyList = empDutyList;
+    }
 
 }

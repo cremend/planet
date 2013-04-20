@@ -17,47 +17,47 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_VISA")
+@Table(name = "T_BASIC_VISA")
 public class BasicVisa {
-	
-	@Id
-	@Column(name="BASIC_VISA_CODE")
-	@GeneratedValue
-	private Integer basicVisaCode;
 
-	@Column(name="BASIC_VISA_NAME")
-	private Integer basicVisaName;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicVisa")
-	private List<EmpResidence> empResidenceList;	
-	
-	//Constructor
-	public BasicVisa(){
-	}
+    @Id
+    @Column(name = "BASIC_VISA_CODE")
+    @GeneratedValue
+    private Integer basicVisaCode;
 
-	//Getters & Setters
-	public Integer getBasicVisaCode() {
-		return basicVisaCode;
-	}
+    @Column(name = "BASIC_VISA_NAME")
+    private Integer basicVisaName;
 
-	public void setBasicVisaType(Integer basicVisaCode) {
-		this.basicVisaCode = basicVisaCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicVisa")
+    private List<EmpResidence> empResidenceList;
 
-	public Integer getBasicVisaName() {
-		return basicVisaName;
-	}
+    // Constructor
+    public BasicVisa() {
+    }
 
-	public void setBasicVisaName(Integer basicVisaName) {
-		this.basicVisaName = basicVisaName;
-	}
+    // Getters & Setters
+    public Integer getBasicVisaCode() {
+        return basicVisaCode;
+    }
 
-	public List<EmpResidence> getEmpResidenceList() {
-		return empResidenceList;
-	}
+    public void setBasicVisaType(Integer basicVisaCode) {
+        this.basicVisaCode = basicVisaCode;
+    }
 
-	public void setEmpResidenceList(List<EmpResidence> empResidenceList) {
-		this.empResidenceList = empResidenceList;
-	}
-	
-	}
+    public Integer getBasicVisaName() {
+        return basicVisaName;
+    }
+
+    public void setBasicVisaName(Integer basicVisaName) {
+        this.basicVisaName = basicVisaName;
+    }
+
+    public List<EmpResidence> getEmpResidenceList() {
+        return empResidenceList;
+    }
+
+    public void setEmpResidenceList(List<EmpResidence> empResidenceList) {
+        this.empResidenceList = empResidenceList;
+    }
+
+}

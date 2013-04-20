@@ -14,66 +14,58 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_TEAM")
+@Table(name = "T_BASIC_TEAM")
 public class BasicTeam {
 
-	@Id
-	@GeneratedValue
-	@Column(name="BASIC_TEAM_CODE")
-	private Integer basicTeamCode; 
+    @Id
+    @GeneratedValue
+    @Column(name = "BASIC_TEAM_CODE")
+    private Integer basicTeamCode;
 
-	@Column(name="BASIC_TEAM_NAME")
-	private String basicTeamName; 
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_GROUP_CODE", nullable=false)
-	private BasicGroup basicGroupCode;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicTeamCode")
-	private List<EmpDuty> empDutyList;	
-	
-	public BasicTeam(){
-		
-	}
+    @Column(name = "BASIC_TEAM_NAME")
+    private String basicTeamName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_GROUP_CODE", nullable = false)
+    private BasicGroup basicGroupCode;
 
-	public Integer getBasicTeamCode() {
-		return basicTeamCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTeamCode")
+    private List<EmpDuty> empDutyList;
 
+    public BasicTeam() {
 
-	public void setBasicTeamCode(Integer basicTeamCode) {
-		this.basicTeamCode = basicTeamCode;
-	}
+    }
 
+    public Integer getBasicTeamCode() {
+        return basicTeamCode;
+    }
 
-	public String getBasicTeamName() {
-		return basicTeamName;
-	}
+    public void setBasicTeamCode(Integer basicTeamCode) {
+        this.basicTeamCode = basicTeamCode;
+    }
 
+    public String getBasicTeamName() {
+        return basicTeamName;
+    }
 
-	public void setBasicTeamName(String basicTeamName) {
-		this.basicTeamName = basicTeamName;
-	}
+    public void setBasicTeamName(String basicTeamName) {
+        this.basicTeamName = basicTeamName;
+    }
 
+    public BasicGroup getBasicGroupCode() {
+        return basicGroupCode;
+    }
 
-	public BasicGroup getBasicGroupCode() {
-		return basicGroupCode;
-	}
+    public void setBasicGroupCode(BasicGroup basicGroupCode) {
+        this.basicGroupCode = basicGroupCode;
+    }
 
+    public List<EmpDuty> getEmpDutyList() {
+        return empDutyList;
+    }
 
-	public void setBasicGroupCode(BasicGroup basicGroupCode) {
-		this.basicGroupCode = basicGroupCode;
-	}
-
-
-	public List<EmpDuty> getEmpDutyList() {
-		return empDutyList;
-	}
-
-
-	public void setEmpDutyList(List<EmpDuty> empDutyList) {
-		this.empDutyList = empDutyList;
-	}
+    public void setEmpDutyList(List<EmpDuty> empDutyList) {
+        this.empDutyList = empDutyList;
+    }
 
 }

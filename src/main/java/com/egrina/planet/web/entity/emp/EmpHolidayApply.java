@@ -20,129 +20,128 @@ import com.egrina.planet.web.entity.basic.*;
 import com.egrina.planet.web.entity.rel.*;
 
 @Entity
-@Table(name="T_EMP_HOLIDAY_APPLY")
+@Table(name = "T_EMP_HOLIDAY_APPLY")
 public class EmpHolidayApply {
 
-	@Id
-	@Column(name="EMP_HOLIDAY_APPLY_PK")
-	@GeneratedValue
-	private Integer empHolydayApplyPk;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_START_DATE")
-	private Date empHolidayApplyStartDate;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_END_DATE")
-	private Date empHolidayApplyEndDate;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_CONTENT")
-	private String empHolidayApplyContent;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_DESTINATION")
-	private String empHolidayApplyDestination;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_DEPART_DATE")
-	private Date empHolidayApplyDepartDate;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_ARRIVE_DATE")
-	private Date empHolidayApplyArriveDate;
-	
-	@Column(name="EMP_HOLIDAY_APPLY_CONFIRM")
-	private Date empHolidayApplyConfirm;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="EMP_CODE", nullable=false)
-	private EmpInfo empInfo;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_WORK_TYPE_CODE", nullable=false)
-	private BasicWorkType basicWorkTypeCode;
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="empHolidayApplyReportPk")
-	private List<RelHolidayApplyReport> ｒelHolidayApplyReportList;
-	
-	public EmpHolidayApply(){
-		
-	}
+    @Id
+    @Column(name = "EMP_HOLIDAY_APPLY_PK")
+    @GeneratedValue
+    private Integer empHolydayApplyPk;
 
-	public Integer getEmpHolydayApplyPk() {
-		return empHolydayApplyPk;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_START_DATE")
+    private Date empHolidayApplyStartDate;
 
-	public void setEmpHolydayApplyPk(Integer empHolydayApplyPk) {
-		this.empHolydayApplyPk = empHolydayApplyPk;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_END_DATE")
+    private Date empHolidayApplyEndDate;
 
-	public Date getEmpHolidayApplyStartDate() {
-		return empHolidayApplyStartDate;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_CONTENT")
+    private String empHolidayApplyContent;
 
-	public void setEmpHolidayApplyStartDate(Date empHolidayApplyStartDate) {
-		this.empHolidayApplyStartDate = empHolidayApplyStartDate;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_DESTINATION")
+    private String empHolidayApplyDestination;
 
-	public Date getEmpHolidayApplyEndDate() {
-		return empHolidayApplyEndDate;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_DEPART_DATE")
+    private Date empHolidayApplyDepartDate;
 
-	public void setEmpHolidayApplyEndDate(Date empHolidayApplyEndDate) {
-		this.empHolidayApplyEndDate = empHolidayApplyEndDate;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_ARRIVE_DATE")
+    private Date empHolidayApplyArriveDate;
 
-	public String getEmpHolidayApplyContent() {
-		return empHolidayApplyContent;
-	}
+    @Column(name = "EMP_HOLIDAY_APPLY_CONFIRM")
+    private Date empHolidayApplyConfirm;
 
-	public void setEmpHolidayApplyContent(String empHolidayApplyContent) {
-		this.empHolidayApplyContent = empHolidayApplyContent;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
-	public String getEmpHolidayApplyDestination() {
-		return empHolidayApplyDestination;
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_WORK_TYPE_CODE", nullable = false)
+    private BasicWorkType basicWorkTypeCode;
 
-	public void setEmpHolidayApplyDestination(String empHolidayApplyDestination) {
-		this.empHolidayApplyDestination = empHolidayApplyDestination;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empHolidayApplyReportPk")
+    private List<RelHolidayApplyReport> ｒelHolidayApplyReportList;
 
-	public Date getEmpHolidayApplyDepartDate() {
-		return empHolidayApplyDepartDate;
-	}
+    public EmpHolidayApply() {
 
-	public void setEmpHolidayApplyDepartDate(Date empHolidayApplyDepartDate) {
-		this.empHolidayApplyDepartDate = empHolidayApplyDepartDate;
-	}
+    }
 
-	public Date getEmpHolidayApplyArriveDate() {
-		return empHolidayApplyArriveDate;
-	}
+    public Integer getEmpHolydayApplyPk() {
+        return empHolydayApplyPk;
+    }
 
-	public void setEmpHolidayApplyArriveDate(Date empHolidayApplyArriveDate) {
-		this.empHolidayApplyArriveDate = empHolidayApplyArriveDate;
-	}
+    public void setEmpHolydayApplyPk(Integer empHolydayApplyPk) {
+        this.empHolydayApplyPk = empHolydayApplyPk;
+    }
 
-	public Date getEmpHolidayApplyConfirm() {
-		return empHolidayApplyConfirm;
-	}
+    public Date getEmpHolidayApplyStartDate() {
+        return empHolidayApplyStartDate;
+    }
 
-	public void setEmpHolidayApplyConfirm(Date empHolidayApplyConfirm) {
-		this.empHolidayApplyConfirm = empHolidayApplyConfirm;
-	}
+    public void setEmpHolidayApplyStartDate(Date empHolidayApplyStartDate) {
+        this.empHolidayApplyStartDate = empHolidayApplyStartDate;
+    }
 
-	public EmpInfo getEmpInfo() {
-		return empInfo;
-	}
+    public Date getEmpHolidayApplyEndDate() {
+        return empHolidayApplyEndDate;
+    }
 
-	public void setEmpInfo(EmpInfo empInfo) {
-		this.empInfo = empInfo;
-	}
+    public void setEmpHolidayApplyEndDate(Date empHolidayApplyEndDate) {
+        this.empHolidayApplyEndDate = empHolidayApplyEndDate;
+    }
 
-	public BasicWorkType getBasicWorkTypeCode() {
-		return basicWorkTypeCode;
-	}
+    public String getEmpHolidayApplyContent() {
+        return empHolidayApplyContent;
+    }
 
-	public void setBasicWorkType(BasicWorkType basicWorkTypeCode) {
-		this.basicWorkTypeCode = basicWorkTypeCode;
-	}
-	
-	
+    public void setEmpHolidayApplyContent(String empHolidayApplyContent) {
+        this.empHolidayApplyContent = empHolidayApplyContent;
+    }
+
+    public String getEmpHolidayApplyDestination() {
+        return empHolidayApplyDestination;
+    }
+
+    public void setEmpHolidayApplyDestination(String empHolidayApplyDestination) {
+        this.empHolidayApplyDestination = empHolidayApplyDestination;
+    }
+
+    public Date getEmpHolidayApplyDepartDate() {
+        return empHolidayApplyDepartDate;
+    }
+
+    public void setEmpHolidayApplyDepartDate(Date empHolidayApplyDepartDate) {
+        this.empHolidayApplyDepartDate = empHolidayApplyDepartDate;
+    }
+
+    public Date getEmpHolidayApplyArriveDate() {
+        return empHolidayApplyArriveDate;
+    }
+
+    public void setEmpHolidayApplyArriveDate(Date empHolidayApplyArriveDate) {
+        this.empHolidayApplyArriveDate = empHolidayApplyArriveDate;
+    }
+
+    public Date getEmpHolidayApplyConfirm() {
+        return empHolidayApplyConfirm;
+    }
+
+    public void setEmpHolidayApplyConfirm(Date empHolidayApplyConfirm) {
+        this.empHolidayApplyConfirm = empHolidayApplyConfirm;
+    }
+
+    public EmpInfo getEmpInfo() {
+        return empInfo;
+    }
+
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
+    }
+
+    public BasicWorkType getBasicWorkTypeCode() {
+        return basicWorkTypeCode;
+    }
+
+    public void setBasicWorkType(BasicWorkType basicWorkTypeCode) {
+        this.basicWorkTypeCode = basicWorkTypeCode;
+    }
+
 }

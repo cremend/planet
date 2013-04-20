@@ -23,7 +23,7 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
         Query query = entityManager.createQuery("FROM BasicSite");
         return query.getResultList();
     }
-    
+
     @Override
     @Transactional(readOnly = true)
     public BasicSite findById(Integer basicSiteCode) {

@@ -14,59 +14,58 @@ import javax.persistence.Table;
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
-@Table(name="T_BASIC_SITE")
+@Table(name = "T_BASIC_SITE")
 public class BasicSite {
 
-	@Id
-	@GeneratedValue
-	@Column(name="BASIC_SITE_CODE")
-	private Integer basicSiteCode; 
+    @Id
+    @GeneratedValue
+    @Column(name = "BASIC_SITE_CODE")
+    private Integer basicSiteCode;
 
-	@Column(name="BASIC_SITE_NAME")
-	private String basicSiteName; 
+    @Column(name = "BASIC_SITE_NAME")
+    private String basicSiteName;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="BASIC_COMPANY_CODE", nullable=false)
-	private BasicCompany basicCompanyCode;	
-	
-	@OneToMany(fetch=FetchType.LAZY, mappedBy="basicSite")
-	private List<EmpSite> empSiteList;	
-	
-	public BasicSite(){
-		
-	}
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BASIC_COMPANY_CODE", nullable = false)
+    private BasicCompany basicCompanyCode;
 
-	public Integer getBasicSiteCode() {
-		return basicSiteCode;
-	}
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicSite")
+    private List<EmpSite> empSiteList;
 
-	public void setBasicSiteCode(Integer basicSiteCode) {
-		this.basicSiteCode = basicSiteCode;
-	}
+    public BasicSite() {
 
-	public String getBasicSiteName() {
-		return basicSiteName;
-	}
+    }
 
-	public void setBasicSiteName(String basicSiteName) {
-		this.basicSiteName = basicSiteName;
-	}
+    public Integer getBasicSiteCode() {
+        return basicSiteCode;
+    }
 
-	public BasicCompany getBasicCompanyCode() {
-		return basicCompanyCode;
-	}
+    public void setBasicSiteCode(Integer basicSiteCode) {
+        this.basicSiteCode = basicSiteCode;
+    }
 
-	public void setBasicCompanyCode(BasicCompany basicCompanyCode) {
-		this.basicCompanyCode = basicCompanyCode;
-	}
+    public String getBasicSiteName() {
+        return basicSiteName;
+    }
 
-	public List<EmpSite> getEmpSiteList() {
-		return empSiteList;
-	}
+    public void setBasicSiteName(String basicSiteName) {
+        this.basicSiteName = basicSiteName;
+    }
 
-	public void setEmpSiteList(List<EmpSite> empSiteList) {
-		this.empSiteList = empSiteList;
-	}
+    public BasicCompany getBasicCompanyCode() {
+        return basicCompanyCode;
+    }
 
+    public void setBasicCompanyCode(BasicCompany basicCompanyCode) {
+        this.basicCompanyCode = basicCompanyCode;
+    }
+
+    public List<EmpSite> getEmpSiteList() {
+        return empSiteList;
+    }
+
+    public void setEmpSiteList(List<EmpSite> empSiteList) {
+        this.empSiteList = empSiteList;
+    }
 
 }

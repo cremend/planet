@@ -5,7 +5,7 @@ import com.egrina.planet.web.entity.basic.*;
 
 public interface BasicNationDao {
 
-	public List<BasicNation> findAll();
+    public List<BasicNation> findAll();
 
     public BasicNation findById(Integer basicNationCode);
 

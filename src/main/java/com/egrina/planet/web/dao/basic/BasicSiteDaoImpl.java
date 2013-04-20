@@ -21,7 +21,6 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     public List<BasicSite> findAll() {
         // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicSite");
-
         return query.getResultList();
     }
     
@@ -33,7 +32,7 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicSiteCode) {
         // TODO Auto-generated method stub
         BasicSite basisSite = entityManager.find(BasicSite.class, basicSiteCode);
@@ -41,7 +40,7 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicSite save(BasicSite basicSite) {
         // TODO Auto-generated method stub
         if (basicSite.getBasicSiteCode() == null) {

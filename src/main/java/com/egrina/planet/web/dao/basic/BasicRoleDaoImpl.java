@@ -33,7 +33,7 @@ public class BasicRoleDaoImpl implements BasicRoleDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer BasicRoleCode) {
         // TODO Auto-generated method stub
         BasicRole basisGroup = entityManager.find(BasicRole.class, BasicRoleCode);
@@ -41,7 +41,7 @@ public class BasicRoleDaoImpl implements BasicRoleDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicRole save(BasicRole BasicRole) {
         // TODO Auto-generated method stub
         if (BasicRole.getBasicRoleCode() == null) {

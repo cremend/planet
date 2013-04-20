@@ -29,13 +29,13 @@ public class BasicJobCategoryDaoImpl implements BasicJobCategoryDao{
     }
 
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public void delete(Integer basicJobCategoryCode) {
         BasicJobCategory basicJobCategory = entityManager.find(BasicJobCategory.class, basicJobCategoryCode);
         entityManager.remove(basicJobCategory);
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public BasicJobCategory save(BasicJobCategory basicJobCategory) {
         if (basicJobCategory.getBasicJobCategoryCode() == null) {
             entityManager.persist(basicJobCategory);

@@ -19,5 +19,4 @@ public class EmpController {
     public String index() {
         return "/ab/index";
     }
-
 }

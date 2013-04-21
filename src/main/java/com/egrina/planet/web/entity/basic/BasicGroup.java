@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -16,21 +16,20 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicGroup {
 
     @Id
-    @Column(name = "BASIC_GROUP_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_GROUP_CODE")
     private Integer basicGroupCode;
 
     @Column(name = "BASIC_GROUP_NAME")
     private String basicGroupName;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicGroupCode")
-    private List<BasicTeam> listBasicTeam;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicGroup")
+    private List<BasicTeam> basicTeamList;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicGroupCode")
     private List<EmpDuty> empDutyList;
 
     public BasicGroup() {
-
     }
 
     public Integer getBasicGroupCode() {
@@ -49,12 +48,12 @@ public class BasicGroup {
         this.basicGroupName = basicGroupName;
     }
 
-    public List<BasicTeam> getListBasicTeam() {
-        return listBasicTeam;
+    public List<BasicTeam> getBasicTeamList() {
+        return basicTeamList;
     }
 
-    public void setListBasicTeam(List<BasicTeam> listBasicTeam) {
-        this.listBasicTeam = listBasicTeam;
+    public void setBasicTeamList(List<BasicTeam> basicTeamList) {
+        this.basicTeamList = basicTeamList;
     }
 
     public List<EmpDuty> getEmpDutyList() {
@@ -64,5 +63,4 @@ public class BasicGroup {
     public void setEmpDutyList(List<EmpDuty> empDutyList) {
         this.empDutyList = empDutyList;
     }
-
 }

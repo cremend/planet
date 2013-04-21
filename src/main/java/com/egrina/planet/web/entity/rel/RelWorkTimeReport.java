@@ -6,9 +6,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -36,7 +36,6 @@ public class RelWorkTimeReport {
     private boolean result;
 
     public RelWorkTimeReport() {
-
     }
 
     public Integer getRelWorkTimeReportPk() {
@@ -78,5 +77,4 @@ public class RelWorkTimeReport {
     public void setResult(boolean result) {
         this.result = result;
     }
-
 }

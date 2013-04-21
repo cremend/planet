@@ -1,7 +1,6 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,7 +18,6 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicDuty> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicDuty");
         return query.getResultList();
     }
@@ -27,15 +25,12 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     @Override
     @Transactional(readOnly = true)
     public BasicDuty findById(Integer basicDutyCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicDuty.class, basicDutyCode);
-
     }
 
     @Override
     @Transactional
     public void delete(Integer basicDutyCode) {
-        // TODO Auto-generated method stub
         BasicDuty basisDuty = entityManager.find(BasicDuty.class, basicDutyCode);
         entityManager.remove(basisDuty);
     }
@@ -43,7 +38,6 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
     @Override
     @Transactional
     public BasicDuty save(BasicDuty basicDuty) {
-        // TODO Auto-generated method stub
         if (basicDuty.getBasicDutyCode() == null) {
             entityManager.persist(basicDuty);
             return basicDuty;
@@ -51,5 +45,4 @@ public class BasicDutyDaoImpl implements BasicDutyDao {
             return entityManager.merge(basicDuty);
         }
     }
-
 }

@@ -1,18 +1,13 @@
 package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
-//import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,8 +15,8 @@ import javax.persistence.Table;
 public class EmpHoliday {
 
     @Id
-    @Column(name = "EMP_HOLIDAY_PK")
     @GeneratedValue
+    @Column(name = "EMP_HOLIDAY_PK")
     private Integer empHolidayPk;
 
     @Column(name = "EMP_HOLIDAY_DATE")
@@ -44,7 +39,6 @@ public class EmpHoliday {
     private EmpInfo empInfo;
 
     public EmpHoliday() {
-
     }
 
     public Integer getEmpHolidayPk() {
@@ -102,5 +96,4 @@ public class EmpHoliday {
     public void setEmpInfo(EmpInfo empInfo) {
         this.empInfo = empInfo;
     }
-
 }

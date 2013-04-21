@@ -1,10 +1,6 @@
 package com.egrina.planet.web.entity.emp;
 
-//import java.util.Date;
-//import java.util.List;
-
 import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import com.egrina.planet.web.entity.basic.*;
 
 @Entity
 @Table(name = "T_EMP_JOIN")
@@ -38,7 +33,6 @@ public class EmpJoin {
     private Calendar empJoinEndDate;
 
     public EmpJoin() {
-
     }
 
     public Integer getEmpJoinPk() {
@@ -80,5 +74,4 @@ public class EmpJoin {
     public void setEmpJoinEndDate(Calendar empJoinEndDate) {
         this.empJoinEndDate = empJoinEndDate;
     }
-
 }

@@ -1,19 +1,14 @@
 package com.egrina.planet.web.entity.basic;
 
-//import java.util.Date;
-//import java.util.List;
-
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -21,8 +16,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicZip {
 
     @Id
-    @Column(name = "BASIC_ZIP_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_ZIP_CODE")
     private Integer basicZipCode;
 
     @Column(name = "BASIC_ZIP_NAME")
@@ -31,7 +26,6 @@ public class BasicZip {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicZipCode")
     private List<EmpInfo> empInfoList;
 
-    // Constructor
     public BasicZip() {
     }
 
@@ -58,5 +52,4 @@ public class BasicZip {
     public void setEmpInfoList(List<EmpInfo> empInfoList) {
         this.empInfoList = empInfoList;
     }
-
 }

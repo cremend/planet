@@ -2,10 +2,8 @@ package com.egrina.planet.web.entity.basic;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -13,14 +11,13 @@ import javax.persistence.Table;
 public class BasicNation {
 
     @Id
-    @Column(name = "BASIC_NATION_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_NATION_CODE")
     private Integer basicNationCode;
 
     @Column(name = "BASIC_NATION_NAME")
     private String basicNationName;
 
-    // Constructor
     public BasicNation() {
     }
 
@@ -39,5 +36,4 @@ public class BasicNation {
     public void setBasicNationName(String basicNationName) {
         this.basicNationName = basicNationName;
     }
-
 }

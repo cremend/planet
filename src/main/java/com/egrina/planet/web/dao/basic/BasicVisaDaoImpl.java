@@ -1,7 +1,6 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,7 +18,6 @@ public class BasicVisaDaoImpl implements BasicVisaDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicVisa> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicVisa");
         return query.getResultList();
     }
@@ -27,15 +25,12 @@ public class BasicVisaDaoImpl implements BasicVisaDao {
     @Override
     @Transactional(readOnly = true)
     public BasicVisa findById(Integer BasicVisaCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicVisa.class, BasicVisaCode);
-
     }
 
     @Override
     @Transactional
     public void delete(Integer BasicVisaCode) {
-        // TODO Auto-generated method stub
         BasicVisa basisGroup = entityManager.find(BasicVisa.class, BasicVisaCode);
         entityManager.remove(basisGroup);
     }
@@ -43,7 +38,6 @@ public class BasicVisaDaoImpl implements BasicVisaDao {
     @Override
     @Transactional
     public BasicVisa save(BasicVisa BasicVisa) {
-        // TODO Auto-generated method stub
         if (BasicVisa.getBasicVisaCode() == null) {
             entityManager.persist(BasicVisa);
             return BasicVisa;
@@ -51,5 +45,4 @@ public class BasicVisaDaoImpl implements BasicVisaDao {
             return entityManager.merge(BasicVisa);
         }
     }
-
 }

@@ -1,7 +1,6 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,7 +18,6 @@ public class BasicNationDaoImpl implements BasicNationDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicNation> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicNation");
         return query.getResultList();
     }
@@ -27,15 +25,12 @@ public class BasicNationDaoImpl implements BasicNationDao {
     @Override
     @Transactional(readOnly = true)
     public BasicNation findById(Integer BasicNationCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicNation.class, BasicNationCode);
-
     }
 
     @Override
     @Transactional
     public void delete(Integer BasicNationCode) {
-        // TODO Auto-generated method stub
         BasicNation basisGroup = entityManager.find(BasicNation.class, BasicNationCode);
         entityManager.remove(basisGroup);
     }
@@ -43,7 +38,6 @@ public class BasicNationDaoImpl implements BasicNationDao {
     @Override
     @Transactional
     public BasicNation save(BasicNation BasicNation) {
-        // TODO Auto-generated method stub
         if (BasicNation.getBasicNationCode() == null) {
             entityManager.persist(BasicNation);
             return BasicNation;
@@ -51,5 +45,4 @@ public class BasicNationDaoImpl implements BasicNationDao {
             return entityManager.merge(BasicNation);
         }
     }
-
 }

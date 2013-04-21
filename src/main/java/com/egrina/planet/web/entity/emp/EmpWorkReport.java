@@ -2,20 +2,23 @@ package com.egrina.planet.web.entity.emp;
 
 import java.sql.Time;
 import java.util.Date;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.FetchType;
 
 @Entity
 @Table(name = "T_EMP_WORK_REPORT")
 public class EmpWorkReport {
 
     @Id
-    @Column(name = "EMP_WORK_REPORT_PK")
     @GeneratedValue
+    @Column(name = "EMP_WORK_REPORT_PK")
     private Integer empWorkReportPk;
-
-    // @Column(name="EMP_CODE")
-    // private String empCode;
 
     @Column(name = "BASIC_WORK_REPORT_TYPE_CODE")
     private Integer basicWorkReportTypeCode;
@@ -40,7 +43,6 @@ public class EmpWorkReport {
     private EmpInfo empInfo;
 
     public EmpWorkReport() {
-
     }
 
     public Integer getEmpWorkReportPk() {
@@ -106,5 +108,4 @@ public class EmpWorkReport {
     public void setEmpInfo(EmpInfo empInfo) {
         this.empInfo = empInfo;
     }
-
 }

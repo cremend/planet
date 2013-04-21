@@ -37,6 +37,9 @@
 <f:form method="post" action="${submitUrl}" modelAttribute="site">
     <label for="name">Name</label>
     <f:input path="basicSiteName" id="name"/>
+    <f:select path="basicCompany.basicCompanyCode">
+        <f:options items="${companyList}" itemLabel="basicCompanyName" itemValue="basicCompanyCode"/>
+    </f:select>
     <input type="submit" class="button1"/>
 </f:form>
 </body>

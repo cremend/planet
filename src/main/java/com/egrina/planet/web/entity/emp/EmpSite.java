@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,8 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
@@ -18,8 +17,8 @@ import com.egrina.planet.web.entity.basic.*;
 public class EmpSite {
 
     @Id
-    @Column(name = "EMP_SITE_PK")
     @GeneratedValue
+    @Column(name = "EMP_SITE_PK")
     private Integer empSitePk;
 
     @Column(name = "EMP_SITE_START_DATE")
@@ -52,7 +51,6 @@ public class EmpSite {
     private BasicJobCategory basicJobCategory;
 
     public EmpSite() {
-
     }
 
     public Integer getEmpSitePk() {
@@ -126,5 +124,4 @@ public class EmpSite {
     public void setBasicJobCategory(BasicJobCategory basicJobCategory) {
         this.basicJobCategory = basicJobCategory;
     }
-
 }

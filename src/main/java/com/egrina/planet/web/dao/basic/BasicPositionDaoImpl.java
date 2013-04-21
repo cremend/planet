@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.basic.*;
@@ -17,7 +18,6 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicPosition> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicPosition");
         return query.getResultList();
     }
@@ -25,15 +25,12 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     @Override
     @Transactional(readOnly = true)
     public BasicPosition findById(Integer basicPositionCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicPosition.class, basicPositionCode);
-
     }
 
     @Override
     @Transactional
     public void delete(Integer basicPositionCode) {
-        // TODO Auto-generated method stub
         BasicPosition basisPosition = entityManager.find(BasicPosition.class, basicPositionCode);
         entityManager.remove(basisPosition);
     }
@@ -41,7 +38,6 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
     @Override
     @Transactional
     public BasicPosition save(BasicPosition basicPosition) {
-        // TODO Auto-generated method stub
         if (basicPosition.getBasicPositionCode() == null) {
             entityManager.persist(basicPosition);
             return basicPosition;
@@ -49,5 +45,4 @@ public class BasicPositionDaoImpl implements BasicPositionDao {
             return entityManager.merge(basicPosition);
         }
     }
-
 }

@@ -37,6 +37,9 @@
 <f:form method="post" action="${submitUrl}" modelAttribute="team">
     <label for="name">Name</label>
     <f:input path="basicTeamName" id="name"/>
+    <f:select path="basicGroup.basicGroupCode">
+        <f:options items="${groupList}" itemLabel="basicGroupName" itemValue="basicGroupCode"/>
+    </f:select>
     <input type="submit" class="button1"/>
 </f:form>
 </body>

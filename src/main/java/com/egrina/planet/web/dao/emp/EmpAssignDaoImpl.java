@@ -1,13 +1,11 @@
 package com.egrina.planet.web.dao.emp;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.transaction.annotation.Transactional;
-
 import com.egrina.planet.web.entity.emp.EmpAssign;
 
 public class EmpAssignDaoImpl implements EmpAssignDao {
@@ -18,7 +16,6 @@ public class EmpAssignDaoImpl implements EmpAssignDao {
     @Override
     @Transactional(readOnly = true)
     public List<EmpAssign> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM EmpAssign");
         return query.getResultList();
     }
@@ -26,14 +23,12 @@ public class EmpAssignDaoImpl implements EmpAssignDao {
     @Override
     @Transactional(readOnly = true)
     public EmpAssign findById(Integer empAssignPk) {
-        // TODO Auto-generated method stub
         return entityManager.find(EmpAssign.class, empAssignPk);
     }
 
     @Override
     @Transactional
     public void delete(Integer empAssignPk) {
-        // TODO Auto-generated method stub
         EmpAssign empAssign = entityManager.find(EmpAssign.class, empAssignPk);
         entityManager.remove(empAssign);
     }
@@ -41,7 +36,6 @@ public class EmpAssignDaoImpl implements EmpAssignDao {
     @Override
     @Transactional
     public EmpAssign save(EmpAssign empAssign) {
-        // TODO Auto-generated method stub
         if (empAssign.getEmpAssignPk() == null) {
             entityManager.persist(empAssign);
             return empAssign;

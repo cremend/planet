@@ -1,13 +1,11 @@
 package com.egrina.planet.web.dao.rel;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.transaction.annotation.Transactional;
-
 import com.egrina.planet.web.entity.rel.RelWorkTimeReport;
 
 public class RelWorkTimeReportDaoImpl implements RelWorkTimeReportDao {
@@ -18,7 +16,6 @@ public class RelWorkTimeReportDaoImpl implements RelWorkTimeReportDao {
     @Override
     @Transactional(readOnly = true)
     public List<RelWorkTimeReport> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM RelWorkTimeReport");
         return query.getResultList();
     }
@@ -26,14 +23,12 @@ public class RelWorkTimeReportDaoImpl implements RelWorkTimeReportDao {
     @Override
     @Transactional(readOnly = true)
     public RelWorkTimeReport findById(Integer relWorkTimeReportPk) {
-        // TODO Auto-generated method stub
         return entityManager.find(RelWorkTimeReport.class, relWorkTimeReportPk);
     }
 
     @Override
     @Transactional
     public void delete(Integer relWorkTimeReportPk) {
-        // TODO Auto-generated method stub
         RelWorkTimeReport relWorkTimeReport = entityManager.find(RelWorkTimeReport.class, relWorkTimeReportPk);
         entityManager.remove(relWorkTimeReport);
     }
@@ -41,7 +36,6 @@ public class RelWorkTimeReportDaoImpl implements RelWorkTimeReportDao {
     @Override
     @Transactional
     public RelWorkTimeReport save(RelWorkTimeReport relWorkTimeReport) {
-        // TODO Auto-generated method stub
         if (relWorkTimeReport.getRelWorkTimeReportPk() == null) {
             entityManager.persist(relWorkTimeReport);
             return relWorkTimeReport;
@@ -49,5 +43,4 @@ public class RelWorkTimeReportDaoImpl implements RelWorkTimeReportDao {
             return entityManager.merge(relWorkTimeReport);
         }
     }
-
 }

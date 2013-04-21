@@ -2,7 +2,6 @@ package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.basic.*;
 import com.egrina.planet.web.entity.rel.*;
 
@@ -20,8 +20,8 @@ import com.egrina.planet.web.entity.rel.*;
 public class EmpPass {
 
     @Id
-    @Column(name = "EMP_PASS_PK")
     @GeneratedValue
+    @Column(name = "EMP_PASS_PK")
     private Integer empPassPk;
 
     @Column(name = "EMP_PASS_START_DATE")
@@ -57,7 +57,6 @@ public class EmpPass {
     private List<RelPassReport> relPassReportList;
 
     public EmpPass() {
-
     }
 
     public Integer getEmpPassPk() {
@@ -147,5 +146,4 @@ public class EmpPass {
     public void setRelPassReportList(List<RelPassReport> relPassReportList) {
         this.relPassReportList = relPassReportList;
     }
-
 }

@@ -1,19 +1,15 @@
 package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
-//import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
@@ -21,8 +17,8 @@ import com.egrina.planet.web.entity.basic.*;
 public class EmpCharge1 {
 
     @Id
-    @Column(name = "EMP_CHARGE1_PK")
     @GeneratedValue
+    @Column(name = "EMP_CHARGE1_PK")
     private Integer empcharge1Pk;
 
     @Column(name = "EMP_CHARGE1_DATE")
@@ -52,7 +48,6 @@ public class EmpCharge1 {
     private BasicTransType basicTransType;
 
     public EmpCharge1() {
-
     }
 
     public Integer getEmpcharge1Pk() {
@@ -126,5 +121,4 @@ public class EmpCharge1 {
     public void setBasicTransType(BasicTransType basicTransType) {
         this.basicTransType = basicTransType;
     }
-
 }

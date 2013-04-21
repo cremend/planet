@@ -1,7 +1,6 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,7 +18,6 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicGroup> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicGroup");
         return query.getResultList();
     }
@@ -27,15 +25,12 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
     @Override
     @Transactional(readOnly = true)
     public BasicGroup findById(Integer basicGroupCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicGroup.class, basicGroupCode);
-
     }
 
     @Override
     @Transactional
     public void delete(Integer basicGroupCode) {
-        // TODO Auto-generated method stub
         BasicGroup basisGroup = entityManager.find(BasicGroup.class, basicGroupCode);
         entityManager.remove(basisGroup);
     }
@@ -43,7 +38,6 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
     @Override
     @Transactional
     public BasicGroup save(BasicGroup basicGroup) {
-        // TODO Auto-generated method stub
         if (basicGroup.getBasicGroupCode() == null) {
             entityManager.persist(basicGroup);
             return basicGroup;
@@ -51,5 +45,4 @@ public class BasicGroupDaoImpl implements BasicGroupDao {
             return entityManager.merge(basicGroup);
         }
     }
-
 }

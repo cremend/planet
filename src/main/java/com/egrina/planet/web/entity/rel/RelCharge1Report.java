@@ -1,7 +1,5 @@
 package com.egrina.planet.web.entity.rel;
 
-//import java.util.Date;
-//import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -19,8 +17,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class RelCharge1Report {
 
     @Id
-    @Column(name = "REL_CHARGE1_REPORT_PK")
     @GeneratedValue
+    @Column(name = "REL_CHARGE1_REPORT_PK")
     private Integer relCharge1ReportPk;
 
     @Column(name = "RESULT")
@@ -39,7 +37,6 @@ public class RelCharge1Report {
     private EmpInfo empInfo2;
 
     public RelCharge1Report() {
-
     }
 
     public EmpCharge1 getEmpCharge1() {
@@ -81,5 +78,4 @@ public class RelCharge1Report {
     public void setEmpInfo2(EmpInfo empInfo2) {
         this.empInfo2 = empInfo2;
     }
-
 }

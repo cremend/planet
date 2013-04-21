@@ -1,19 +1,14 @@
 package com.egrina.planet.web.entity.basic;
 
-//import java.util.Date;
-//import java.util.List;
-
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -21,8 +16,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicWorkType {
 
     @Id
-    @Column(name = "BASIC_WORK_TYPE_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_WORK_TYPE_CODE")
     private Integer basicWorkTypeCode;
 
     @Column(name = "BASIC_WORK_TYPE_NAME")
@@ -35,7 +30,6 @@ public class BasicWorkType {
     private List<EmpHolidayApply> empHolidayApplyList;
 
     public BasicWorkType() {
-
     }
 
     public Integer getBasicWorkTypeCode() {
@@ -69,5 +63,4 @@ public class BasicWorkType {
     public void setEmpHolidayApplyList(List<EmpHolidayApply> empHolidayApplyList) {
         this.empHolidayApplyList = empHolidayApplyList;
     }
-
 }

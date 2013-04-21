@@ -18,7 +18,6 @@ public class RelCharge1ReportDaoImpl implements RelCharge1ReportDao {
     @Override
     @Transactional(readOnly = true)
     public List<RelCharge1Report> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM RelCharge1Report");
         return query.getResultList();
     }
@@ -26,14 +25,12 @@ public class RelCharge1ReportDaoImpl implements RelCharge1ReportDao {
     @Override
     @Transactional(readOnly = true)
     public RelCharge1Report findById(Integer relCharge1ReportPk) {
-        // TODO Auto-generated method stub
         return entityManager.find(RelCharge1Report.class, relCharge1ReportPk);
     }
 
     @Override
     @Transactional
     public void delete(Integer relCharge1ReportPk) {
-        // TODO Auto-generated method stub
         RelCharge1Report relCharge1Report = entityManager.find(RelCharge1Report.class, relCharge1ReportPk);
         entityManager.remove(relCharge1Report);
     }
@@ -41,7 +38,6 @@ public class RelCharge1ReportDaoImpl implements RelCharge1ReportDao {
     @Override
     @Transactional
     public RelCharge1Report save(RelCharge1Report relCharge1Report) {
-        // TODO Auto-generated method stub
         if (relCharge1Report.getRelCharge1ReportPk() == null) {
             entityManager.persist(relCharge1Report);
             return relCharge1Report;
@@ -49,5 +45,4 @@ public class RelCharge1ReportDaoImpl implements RelCharge1ReportDao {
             return entityManager.merge(relCharge1Report);
         }
     }
-
 }

@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA. User: xperad Date: 西暦.13/03/31 Time: 0:37 To
- * change this template use File | Settings | File Templates.
- */
-
 @Controller
 @RequestMapping("/ZA/002")
 public class GroupController {
@@ -69,5 +64,4 @@ public class GroupController {
         model.asMap().clear();
         return "redirect:/ZA/002";
     }
-
 }

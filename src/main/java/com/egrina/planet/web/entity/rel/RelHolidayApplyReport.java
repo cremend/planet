@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -36,7 +37,6 @@ public class RelHolidayApplyReport {
     private boolean result;
 
     public RelHolidayApplyReport() {
-
     }
 
     public Integer getRelHolidayApplyReportPk() {
@@ -78,5 +78,4 @@ public class RelHolidayApplyReport {
     public void setResult(boolean result) {
         this.result = result;
     }
-
 }

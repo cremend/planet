@@ -1,6 +1,8 @@
 package com.egrina.planet.web.controller.basic;
 
+import com.egrina.planet.web.dao.basic.BasicGroupDao;
 import com.egrina.planet.web.dao.basic.BasicTeamDao;
+import com.egrina.planet.web.entity.basic.BasicGroup;
 import com.egrina.planet.web.entity.basic.BasicTeam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,11 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA. User: xperad Date: 西暦.13/03/31 Time: 0:37 To
- * change this template use File | Settings | File Templates.
- */
-
 @Controller
 @RequestMapping("/ZA/003")
 public class TeamController {
@@ -24,9 +21,17 @@ public class TeamController {
     @Autowired
     private BasicTeamDao basicTeamDao;
 
+    @Autowired
+    private BasicGroupDao basicGroupDao;
+
     @ModelAttribute("teamList")
     public List<BasicTeam> getAllTeamList() {
         return basicTeamDao.findAll();
+    }
+
+    @ModelAttribute("groupList")
+    public List<BasicGroup> getAllGroupList() {
+        return basicGroupDao.findAll();
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -69,5 +74,4 @@ public class TeamController {
         model.asMap().clear();
         return "redirect:/ZA/003";
     }
-
 }

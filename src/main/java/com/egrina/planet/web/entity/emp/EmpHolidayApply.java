@@ -2,20 +2,16 @@ package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
 import java.util.List;
-//import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-//import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.basic.*;
 import com.egrina.planet.web.entity.rel.*;
 
@@ -24,8 +20,8 @@ import com.egrina.planet.web.entity.rel.*;
 public class EmpHolidayApply {
 
     @Id
-    @Column(name = "EMP_HOLIDAY_APPLY_PK")
     @GeneratedValue
+    @Column(name = "EMP_HOLIDAY_APPLY_PK")
     private Integer empHolydayApplyPk;
 
     @Column(name = "EMP_HOLIDAY_APPLY_START_DATE")
@@ -61,7 +57,6 @@ public class EmpHolidayApply {
     private List<RelHolidayApplyReport> ｒelHolidayApplyReportList;
 
     public EmpHolidayApply() {
-
     }
 
     public Integer getEmpHolydayApplyPk() {
@@ -144,4 +139,15 @@ public class EmpHolidayApply {
         this.basicWorkTypeCode = basicWorkTypeCode;
     }
 
+    public void setBasicWorkTypeCode(BasicWorkType basicWorkTypeCode) {
+        this.basicWorkTypeCode = basicWorkTypeCode;
+    }
+
+    public List<RelHolidayApplyReport> getＲelHolidayApplyReportList() {
+        return ｒelHolidayApplyReportList;
+    }
+
+    public void setＲelHolidayApplyReportList(List<RelHolidayApplyReport> ｒelHolidayApplyReportList) {
+        this.ｒelHolidayApplyReportList = ｒelHolidayApplyReportList;
+    }
 }

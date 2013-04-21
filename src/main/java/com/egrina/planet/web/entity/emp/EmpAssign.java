@@ -12,31 +12,26 @@ import javax.persistence.Table;
 public class EmpAssign {
 
     @Id
-    @Column(name = "emp_assign_pk")
     @GeneratedValue
+    @Column(name = "EMP_ASSIGN_PK")
     private Integer empAssignPk;
 
-    @Column(name = "emp_code")
+    @Column(name = "EMP_CODE")
     private String empCode;
 
-    @Column(name = "emp_team_code")
+    @Column(name = "EMP_TEAM_CODE")
     private String empTeamCode;
 
-    @Column(name = "emp_group_code")
+    @Column(name = "EMP_GROUP_CODE")
     private String empGroupCode;
 
-    @Column(name = "emp_assign_start_date")
+    @Column(name = "EMP_ASSIGN_START_DATE")
     private Date empAssignStartDate;
 
-    @Column(name = "emp_assign_end_Date")
+    @Column(name = "EMP_ASSIGN_END_DATE")
     private Date empAssignEndDate;
 
-    // @OneToMany(fetch=FetchType.LAZY, mappedBy="empAssign")
-    // private List<Post> posts;
-
-    // Constructor
     public EmpAssign() {
-
     }
 
     public Integer getEmpAssignPk() {
@@ -86,7 +81,4 @@ public class EmpAssign {
     public void setEmpAssignEndDate(Date empAssignEndDate) {
         this.empAssignEndDate = empAssignEndDate;
     }
-
-    // Getters & Setters
-
 }

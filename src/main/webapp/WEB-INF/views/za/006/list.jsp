@@ -5,6 +5,7 @@
   Time: 21:36
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -37,6 +38,7 @@
     <tr>
         <th>Code</th>
         <th>Name</th>
+        <th>Company</th>
         <th>Event</th>
     </tr>
     </thead>
@@ -45,6 +47,7 @@
         <tr>
             <td>${site.basicSiteCode}</td>
             <td>${site.basicSiteName}</td>
+            <td>${site.basicCompany.basicCompanyName}</td>
             <td>
                 <c:url var="editUrl" value="/ZA/006/form/${site.basicSiteCode}"/>
                 <c:url var="deleteUrl" value="/ZA/006/delete/${site.basicSiteCode}"/>

@@ -1,45 +1,40 @@
 package com.egrina.planet.web.entity.emp;
 
 import java.util.Date;
-//import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-//import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "T_EMP_charge2")
+@Table(name = "T_EMP_CHARGE2")
 public class EmpCharge2 {
 
     @Id
-    @Column(name = "EMP_charge2_PK")
     @GeneratedValue
+    @Column(name = "EMP_CHARGE2_PK")
     private Integer empcharge2Pk;
 
-    @Column(name = "EMP_charge2_TYPE")
+    @Column(name = "EMP_CHARGE2_TYPE")
     private Integer empcharge2Type;
 
-    @Column(name = "EMP_charge2_DATE")
+    @Column(name = "EMP_CHARGE2_DATE")
     private Date empcharge2Date;
 
-    @Column(name = "EMP_charge2_CONTENT")
+    @Column(name = "EMP_CHARGE2_CONTENT")
     private String empcharge2Content;
 
-    @Column(name = "EMP_charge2_AMOUNT")
+    @Column(name = "EMP_CHARGE2_AMOUNT")
     private Integer empcharge2Amount;
 
-    @Column(name = "EMP_charge2_FILE_PATH")
+    @Column(name = "EMP_CHARGE2_FILE_PATH")
     private String empcharge2FilePath;
 
-    @Column(name = "EMP_charge2_CONFIRM")
+    @Column(name = "EMP_CHARGE2_CONFIRM")
     private boolean empcharge2Confirm;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -47,7 +42,6 @@ public class EmpCharge2 {
     private EmpInfo empInfo;
 
     public EmpCharge2() {
-
     }
 
     public Integer getEmpcharge2Pk() {
@@ -113,5 +107,4 @@ public class EmpCharge2 {
     public void setEmpInfo(EmpInfo empInfo) {
         this.empInfo = empInfo;
     }
-
 }

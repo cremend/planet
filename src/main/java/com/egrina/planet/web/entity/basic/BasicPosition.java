@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -27,7 +27,6 @@ public class BasicPosition {
     private List<EmpPosition> EmpPositionList;
 
     public BasicPosition() {
-
     }
 
     public Integer getBasicPositionCode() {
@@ -45,5 +44,4 @@ public class BasicPosition {
     public void setBasicPositionName(String basicPositionName) {
         this.basicPositionName = basicPositionName;
     }
-
 }

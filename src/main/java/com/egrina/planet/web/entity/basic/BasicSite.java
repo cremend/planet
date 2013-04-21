@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -27,13 +27,12 @@ public class BasicSite {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BASIC_COMPANY_CODE", nullable = false)
-    private BasicCompany basicCompanyCode;
+    private BasicCompany basicCompany;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicSite")
     private List<EmpSite> empSiteList;
 
     public BasicSite() {
-
     }
 
     public Integer getBasicSiteCode() {
@@ -52,12 +51,12 @@ public class BasicSite {
         this.basicSiteName = basicSiteName;
     }
 
-    public BasicCompany getBasicCompanyCode() {
-        return basicCompanyCode;
+    public BasicCompany getBasicCompany() {
+        return basicCompany;
     }
 
-    public void setBasicCompanyCode(BasicCompany basicCompanyCode) {
-        this.basicCompanyCode = basicCompanyCode;
+    public void setBasicCompany(BasicCompany basicCompany) {
+        this.basicCompany = basicCompany;
     }
 
     public List<EmpSite> getEmpSiteList() {
@@ -67,5 +66,4 @@ public class BasicSite {
     public void setEmpSiteList(List<EmpSite> empSiteList) {
         this.empSiteList = empSiteList;
     }
-
 }

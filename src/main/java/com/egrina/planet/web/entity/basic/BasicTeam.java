@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -27,13 +27,12 @@ public class BasicTeam {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BASIC_GROUP_CODE", nullable = false)
-    private BasicGroup basicGroupCode;
+    private BasicGroup basicGroup;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTeamCode")
     private List<EmpDuty> empDutyList;
 
     public BasicTeam() {
-
     }
 
     public Integer getBasicTeamCode() {
@@ -52,12 +51,12 @@ public class BasicTeam {
         this.basicTeamName = basicTeamName;
     }
 
-    public BasicGroup getBasicGroupCode() {
-        return basicGroupCode;
+    public BasicGroup getBasicGroup() {
+        return basicGroup;
     }
 
-    public void setBasicGroupCode(BasicGroup basicGroupCode) {
-        this.basicGroupCode = basicGroupCode;
+    public void setBasicGroup(BasicGroup basicGroup) {
+        this.basicGroup = basicGroup;
     }
 
     public List<EmpDuty> getEmpDutyList() {
@@ -67,5 +66,4 @@ public class BasicTeam {
     public void setEmpDutyList(List<EmpDuty> empDutyList) {
         this.empDutyList = empDutyList;
     }
-
 }

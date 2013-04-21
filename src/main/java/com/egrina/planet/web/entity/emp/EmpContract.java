@@ -3,7 +3,6 @@ package com.egrina.planet.web.entity.emp;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.basic.*;
 
 @Entity
@@ -64,7 +64,6 @@ public class EmpContract {
     private List<EmpSite> empSiteList;
 
     public EmpContract() {
-
     }
 
     public Integer getEmpContractPk() {
@@ -170,5 +169,4 @@ public class EmpContract {
     public void setEmpSiteList(List<EmpSite> empSiteList) {
         this.empSiteList = empSiteList;
     }
-
 }

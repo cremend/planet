@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.emp;
 
 import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -34,7 +33,6 @@ public class EmpPassport {
     private Calendar empPassportEndDate;
 
     public EmpPassport() {
-
     }
 
     public Integer getEmpPassportPk() {
@@ -76,5 +74,4 @@ public class EmpPassport {
     public void setEmpPassportEndDate(Calendar empPassportEndDate) {
         this.empPassportEndDate = empPassportEndDate;
     }
-
 }

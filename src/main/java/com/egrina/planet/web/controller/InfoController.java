@@ -19,5 +19,4 @@ public class InfoController {
     public String index() {
         return "aa/index";
     }
-
 }

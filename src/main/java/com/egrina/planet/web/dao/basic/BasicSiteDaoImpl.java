@@ -1,7 +1,6 @@
 package com.egrina.planet.web.dao.basic;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -19,7 +18,6 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     @Override
     @Transactional(readOnly = true)
     public List<BasicSite> findAll() {
-        // TODO Auto-generated method stub
         Query query = entityManager.createQuery("FROM BasicSite");
         return query.getResultList();
     }
@@ -27,14 +25,12 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     @Override
     @Transactional(readOnly = true)
     public BasicSite findById(Integer basicSiteCode) {
-        // TODO Auto-generated method stub
         return entityManager.find(BasicSite.class, basicSiteCode);
     }
 
     @Override
     @Transactional
     public void delete(Integer basicSiteCode) {
-        // TODO Auto-generated method stub
         BasicSite basisSite = entityManager.find(BasicSite.class, basicSiteCode);
         entityManager.remove(basisSite);
     }
@@ -42,7 +38,6 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
     @Override
     @Transactional
     public BasicSite save(BasicSite basicSite) {
-        // TODO Auto-generated method stub
         if (basicSite.getBasicSiteCode() == null) {
             entityManager.persist(basicSite);
             return basicSite;
@@ -50,5 +45,4 @@ public class BasicSiteDaoImpl implements BasicSiteDao {
             return entityManager.merge(basicSite);
         }
     }
-
 }

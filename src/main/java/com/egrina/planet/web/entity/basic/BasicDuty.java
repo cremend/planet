@@ -1,7 +1,6 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -16,8 +16,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicDuty {
 
     @Id
-    @Column(name = "BASIC_DUTY_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_DUTY_CODE")
     private Integer basicDutyCode;
 
     @Column(name = "BASIC_DUTY_NAME")
@@ -27,7 +27,6 @@ public class BasicDuty {
     private List<EmpDuty> empDutyList;
 
     public BasicDuty() {
-
     }
 
     public Integer getBasicDutyCode() {
@@ -53,5 +52,4 @@ public class BasicDuty {
     public void setEmpDutyList(List<EmpDuty> empDutyList) {
         this.empDutyList = empDutyList;
     }
-
 }

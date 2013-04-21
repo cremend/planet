@@ -1,16 +1,14 @@
 package com.egrina.planet.web.entity.basic;
 
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 
 @Entity
@@ -18,8 +16,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicTransType {
 
     @Id
-    @Column(name = "BASIC_TRANS_TYPE_CODE")
     @GeneratedValue
+    @Column(name = "BASIC_TRANS_TYPE_CODE")
     private Integer basicTransTypeCode;
 
     @Column(name = "BASIC_TRANS_TYPE_NAME")
@@ -31,7 +29,6 @@ public class BasicTransType {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "basicTransType")
     private List<EmpCharge1> empCharge1List;
 
-    // Constructor
     public BasicTransType() {
     }
 
@@ -66,5 +63,4 @@ public class BasicTransType {
     public void setEmpCharge1List(List<EmpCharge1> empCharge1List) {
         this.empCharge1List = empCharge1List;
     }
-
 }

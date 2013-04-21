@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.OneToMany;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.rel.*;
 
 @Entity
@@ -26,7 +27,6 @@ public class BasicTech {
     private List<RelSiteTech> relSiteTechList;
 
     public BasicTech() {
-
     }
 
     public Integer getBasicTechCode() {
@@ -45,4 +45,11 @@ public class BasicTech {
         this.basicTechName = basicTechName;
     }
 
+    public List<RelSiteTech> getRelSiteTechList() {
+        return relSiteTechList;
+    }
+
+    public void setRelSiteTechList(List<RelSiteTech> relSiteTechList) {
+        this.relSiteTechList = relSiteTechList;
+    }
 }

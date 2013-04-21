@@ -45,7 +45,6 @@ public class EmpWorkTime {
     private BasicWorkType basicWorkType;
 
     public EmpWorkTime() {
-
     }
 
     public Integer getEmpWorkTimePk() {
@@ -111,5 +110,4 @@ public class EmpWorkTime {
     public void setBasicWorkType(BasicWorkType basicWorkType) {
         this.basicWorkType = basicWorkType;
     }
-
 }

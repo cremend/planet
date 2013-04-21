@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import com.egrina.planet.web.entity.emp.*;
 import com.egrina.planet.web.entity.basic.*;
 
@@ -17,11 +18,10 @@ import com.egrina.planet.web.entity.basic.*;
 public class RelSiteTech {
 
     @Id
-    @Column(name = "REL_SITE_TECH_PK")
     @GeneratedValue
+    @Column(name = "REL_SITE_TECH_PK")
     private Integer relSiteTechPk;
-    
-    
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMP_SITE_PK", referencedColumnName = "EMP_SITE_PK", nullable = false)
     private EmpSite empSitePk;
@@ -31,19 +31,15 @@ public class RelSiteTech {
     private BasicTech basicTechCode;
 
     public RelSiteTech() {
-
     }
 
-    
     public Integer getRelSiteTechPk() {
         return relSiteTechPk;
     }
 
-
     public void setRelSiteTechPk(Integer relSiteTechPk) {
         this.relSiteTechPk = relSiteTechPk;
     }
-
 
     public EmpSite getEmpSitePk() {
         return empSitePk;
@@ -60,6 +56,4 @@ public class RelSiteTech {
     public void setBasicTechCode(BasicTech basicTechCode) {
         this.basicTechCode = basicTechCode;
     }
-
-  
 }

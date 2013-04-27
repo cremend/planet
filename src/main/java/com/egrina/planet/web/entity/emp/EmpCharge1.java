@@ -19,25 +19,25 @@ public class EmpCharge1 {
     @Id
     @GeneratedValue
     @Column(name = "EMP_CHARGE1_PK")
-    private Integer empcharge1Pk;
+    private Integer empCharge1Pk;
 
     @Column(name = "EMP_CHARGE1_DATE")
-    private Date empcharge1Date;
+    private Date empCharge1Date;
 
     @Column(name = "EMP_CHARGE1_CONTENT")
-    private String empcharge1Content;
+    private String empCharge1Content;
 
     @Column(name = "EMP_CHARGE1_AMOUNT")
-    private Integer empcharge1Amount;
+    private Integer empCharge1Amount;
 
     @Column(name = "EMP_CHARGE1_LOCATION1")
-    private String empcharge1Location1;
+    private String empCharge1Location1;
 
     @Column(name = "EMP_CHARGE1_LOCATION2")
-    private String empcharge1Location2;
+    private String empCharge1Location2;
 
     @Column(name = "EMP_CHARGE1_CONFIRM")
-    private boolean empcharge1Confirm;
+    private boolean empCharge1Confirm;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMP_CODE", nullable = false)
@@ -50,60 +50,60 @@ public class EmpCharge1 {
     public EmpCharge1() {
     }
 
-    public Integer getEmpcharge1Pk() {
-        return empcharge1Pk;
+    public Integer getEmpCharge1Pk() {
+        return empCharge1Pk;
     }
 
-    public void setEmpcharge1Pk(Integer empcharge1Pk) {
-        this.empcharge1Pk = empcharge1Pk;
+    public void setEmpCharge1Pk(Integer empCharge1Pk) {
+        this.empCharge1Pk = empCharge1Pk;
     }
 
-    public Date getEmpcharge1Date() {
-        return empcharge1Date;
+    public Date getEmpCharge1Date() {
+        return empCharge1Date;
     }
 
-    public void setEmpcharge1Date(Date empcharge1Date) {
-        this.empcharge1Date = empcharge1Date;
+    public void setEmpCharge1Date(Date empCharge1Date) {
+        this.empCharge1Date = empCharge1Date;
     }
 
-    public String getEmpcharge1Content() {
-        return empcharge1Content;
+    public String getEmpCharge1Content() {
+        return empCharge1Content;
     }
 
-    public void setEmpcharge1Content(String empcharge1Content) {
-        this.empcharge1Content = empcharge1Content;
+    public void setEmpCharge1Content(String empCharge1Content) {
+        this.empCharge1Content = empCharge1Content;
     }
 
-    public Integer getEmpcharge1Amount() {
-        return empcharge1Amount;
+    public Integer getEmpCharge1Amount() {
+        return empCharge1Amount;
     }
 
-    public void setEmpcharge1Amount(Integer empcharge1Amount) {
-        this.empcharge1Amount = empcharge1Amount;
+    public void setEmpCharge1Amount(Integer empCharge1Amount) {
+        this.empCharge1Amount = empCharge1Amount;
     }
 
-    public String getEmpcharge1Location1() {
-        return empcharge1Location1;
+    public String getEmpCharge1Location1() {
+        return empCharge1Location1;
     }
 
-    public void setEmpcharge1Location1(String empcharge1Location1) {
-        this.empcharge1Location1 = empcharge1Location1;
+    public void setEmpCharge1Location1(String empCharge1Location1) {
+        this.empCharge1Location1 = empCharge1Location1;
     }
 
-    public String getEmpcharge1Location2() {
-        return empcharge1Location2;
+    public String getEmpCharge1Location2() {
+        return empCharge1Location2;
     }
 
-    public void setEmpcharge1Location2(String empcharge1Location2) {
-        this.empcharge1Location2 = empcharge1Location2;
+    public void setEmpCharge1Location2(String empCharge1Location2) {
+        this.empCharge1Location2 = empCharge1Location2;
     }
 
-    public boolean isEmpcharge1Confirm() {
-        return empcharge1Confirm;
+    public boolean isEmpCharge1Confirm() {
+        return empCharge1Confirm;
     }
 
-    public void setEmpcharge1Confirm(boolean empcharge1Confirm) {
-        this.empcharge1Confirm = empcharge1Confirm;
+    public void setEmpCharge1Confirm(boolean empCharge1Confirm) {
+        this.empCharge1Confirm = empCharge1Confirm;
     }
 
     public EmpInfo getEmpInfo() {

@@ -8,6 +8,8 @@ public interface EmpInfoDao {
     public List<EmpInfo> findAll();
 
     public EmpInfo findById(String empCode);
+    
+    public EmpInfo findLatest();
 
     public void delete(String empCode);
 

@@ -17,25 +17,25 @@ public class EmpCharge2 {
     @Id
     @GeneratedValue
     @Column(name = "EMP_CHARGE2_PK")
-    private Integer empcharge2Pk;
+    private Integer empCharge2Pk;
 
     @Column(name = "EMP_CHARGE2_TYPE")
-    private Integer empcharge2Type;
+    private Integer empCharge2Type;
 
     @Column(name = "EMP_CHARGE2_DATE")
-    private Date empcharge2Date;
+    private Date empCharge2Date;
 
     @Column(name = "EMP_CHARGE2_CONTENT")
-    private String empcharge2Content;
+    private String empCharge2Content;
 
     @Column(name = "EMP_CHARGE2_AMOUNT")
-    private Integer empcharge2Amount;
+    private Integer empCharge2Amount;
 
     @Column(name = "EMP_CHARGE2_FILE_PATH")
-    private String empcharge2FilePath;
+    private String empCharge2FilePath;
 
     @Column(name = "EMP_CHARGE2_CONFIRM")
-    private boolean empcharge2Confirm;
+    private boolean empCharge2Confirm;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EMP_CODE", nullable = false)
@@ -44,60 +44,60 @@ public class EmpCharge2 {
     public EmpCharge2() {
     }
 
-    public Integer getEmpcharge2Pk() {
-        return empcharge2Pk;
+    public Integer getEmpCharge2Pk() {
+        return empCharge2Pk;
     }
 
-    public void setEmpcharge2Pk(Integer empcharge2Pk) {
-        this.empcharge2Pk = empcharge2Pk;
+    public void setEmpCharge2Pk(Integer empCharge2Pk) {
+        this.empCharge2Pk = empCharge2Pk;
     }
 
-    public Integer getEmpcharge2Type() {
-        return empcharge2Type;
+    public Integer getEmpCharge2Type() {
+        return empCharge2Type;
     }
 
-    public void setEmpcharge2Type(Integer empcharge2Type) {
-        this.empcharge2Type = empcharge2Type;
+    public void setEmpCharge2Type(Integer empCharge2Type) {
+        this.empCharge2Type = empCharge2Type;
     }
 
-    public Date getEmpcharge2Date() {
-        return empcharge2Date;
+    public Date getEmpCharge2Date() {
+        return empCharge2Date;
     }
 
-    public void setEmpcharge2Date(Date empcharge2Date) {
-        this.empcharge2Date = empcharge2Date;
+    public void setEmpCharge2Date(Date empCharge2Date) {
+        this.empCharge2Date = empCharge2Date;
     }
 
-    public String getEmpcharge2Content() {
-        return empcharge2Content;
+    public String getEmpCharge2Content() {
+        return empCharge2Content;
     }
 
-    public void setEmpcharge2Content(String empcharge2Content) {
-        this.empcharge2Content = empcharge2Content;
+    public void setEmpCharge2Content(String empCharge2Content) {
+        this.empCharge2Content = empCharge2Content;
     }
 
-    public Integer getEmpcharge2Amount() {
-        return empcharge2Amount;
+    public Integer getEmpCharge2Amount() {
+        return empCharge2Amount;
     }
 
-    public void setEmpcharge2Amount(Integer empcharge2Amount) {
-        this.empcharge2Amount = empcharge2Amount;
+    public void setEmpCharge2Amount(Integer empCharge2Amount) {
+        this.empCharge2Amount = empCharge2Amount;
     }
 
-    public String getEmpcharge2FilePath() {
-        return empcharge2FilePath;
+    public String getEmpCharge2FilePath() {
+        return empCharge2FilePath;
     }
 
-    public void setEmpcharge2FilePath(String empcharge2FilePath) {
-        this.empcharge2FilePath = empcharge2FilePath;
+    public void setEmpCharge2FilePath(String empCharge2FilePath) {
+        this.empCharge2FilePath = empCharge2FilePath;
     }
 
-    public boolean isEmpcharge2Confirm() {
-        return empcharge2Confirm;
+    public boolean isempCharge2Confirm() {
+        return empCharge2Confirm;
     }
 
-    public void setEmpcharge2Confirm(boolean empcharge2Confirm) {
-        this.empcharge2Confirm = empcharge2Confirm;
+    public void setEmpCharge2Confirm(boolean empCharge2Confirm) {
+        this.empCharge2Confirm = empCharge2Confirm;
     }
 
     public EmpInfo getEmpInfo() {

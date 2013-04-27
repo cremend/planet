@@ -9,7 +9,7 @@ public interface EmpWorkTimeDao {
 
     public EmpWorkTime findById(Integer empWorkTimePk);
 
-    public void delete(long empWorkTimePk);
+    public void delete(Integer empWorkTimePk);
 
     public EmpWorkTime save(EmpWorkTime empWorkTime);
 }

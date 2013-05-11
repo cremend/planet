@@ -11,4 +11,6 @@ public interface EmpEmployDao {
     public void delete(Integer empEmployPk);
 
     public EmpEmploy save(EmpEmploy empEmploy);
+    
+    public EmpEmploy findLatest();
 }

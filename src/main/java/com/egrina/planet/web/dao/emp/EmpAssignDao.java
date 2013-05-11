@@ -13,4 +13,6 @@ public interface EmpAssignDao {
     public void delete(Integer empAssignPk);
 
     public EmpAssign save(EmpAssign empAssign);
+    
+    public EmpAssign findLatest();
 }

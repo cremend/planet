@@ -47,4 +47,11 @@ public class EmpResidenceDaoImpl implements EmpResidenceDao{
             return entityManager.merge(empResidence);
         }
     }
+    
+    @Override
+    public EmpResidence findLatest() {
+        Query query = entityManager.createQuery("FROM EmpResidence AS a ORDER BY a.empResidencePk DESC");
+        query.setMaxResults(1);
+        return (EmpResidence) query.getSingleResult();
+    }
 }

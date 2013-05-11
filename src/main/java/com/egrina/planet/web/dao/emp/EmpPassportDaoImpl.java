@@ -47,4 +47,10 @@ public class EmpPassportDaoImpl implements EmpPassportDao{
                 return entityManager.merge(empPassport);
             }
         }
+        @Override
+        public EmpPassport findLatest() {
+            Query query = entityManager.createQuery("FROM EmpPassport AS a ORDER BY a.empPassportPk DESC");
+            query.setMaxResults(1);
+            return (EmpPassport) query.getSingleResult();
+        }
 }

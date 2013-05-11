@@ -8,6 +8,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.emp.EmpAssign;
+import com.egrina.planet.web.entity.emp.EmpResidence;
 
 @Repository
 public class EmpAssignDaoImpl implements EmpAssignDao {
@@ -44,5 +45,12 @@ public class EmpAssignDaoImpl implements EmpAssignDao {
         } else {
             return entityManager.merge(empAssign);
         }
+    }
+    
+    @Override
+    public EmpAssign findLatest(){
+        Query query = entityManager.createQuery("FROM EmpAssign AS a ORDER BY a.empAssignPk DESC");
+        query.setMaxResults(1);
+        return (EmpAssign) query.getSingleResult();
     }
 }

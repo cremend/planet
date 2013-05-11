@@ -13,4 +13,6 @@ public interface EmpPassportDao {
     public void delete(Integer empPassportPk);
 
     public EmpPassport save(EmpPassport empPassport);
+    
+    public EmpPassport findLatest();
 }

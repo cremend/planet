@@ -54,4 +54,12 @@ public class EmpInfoService {
         }
         return empInfo;
     }
+    public EmpInfo findByID(String empCode){
+       return empInfoDao.findById(empCode);
+    }
+    
+    public void delete(String empCode){
+      empInfoDao.delete(empCode);
+    }
+
 }

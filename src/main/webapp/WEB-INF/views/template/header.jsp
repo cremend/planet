@@ -35,7 +35,7 @@
     <div class="nav">
         <ul>
             <li><a href="javascript:MenuRedirect('AA', '001')">사원정보</a></li>
-            <li><a href="javascript:MenuRedirect('BA', '001')">근무정보1</a></li>
+            <li><a href="javascript:MenuRedirect('BA', '001')">근무정보</a></li>
             <li><a href="javascript:MenuRedirect('CA', '001')">지출정보</a></li>
             <li><a href="javascript:MenuRedirect('ZA', '001')">관리</a></li>
         </ul>

@@ -13,9 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.egrina.planet.web.entity.emp.EmpInfo;
 import com.egrina.planet.web.entity.emp.EmpResidence;
 import com.egrina.planet.web.entity.emp.EmpPassport;
+import com.egrina.planet.web.entity.emp.EmpAssign;
+import com.egrina.planet.web.entity.emp.EmpEmploy;
+import com.egrina.planet.web.entity.emp.EmpPosition;
+import com.egrina.planet.web.entity.emp.EmpJoin;
+import com.egrina.planet.web.entity.emp.EmpDuty;
 import com.egrina.planet.web.service.emp.EmpInfoService;
 import com.egrina.planet.web.service.emp.EmpResidenceService;
 import com.egrina.planet.web.service.emp.EmpPassportService;
+import com.egrina.planet.web.service.emp.EmpAssignService;
+import com.egrina.planet.web.service.emp.EmpEmployService;
+import com.egrina.planet.web.service.emp.EmpPositionService;
+import com.egrina.planet.web.service.emp.EmpJoinService;
+import com.egrina.planet.web.service.emp.EmpDutyService;
 
 @Controller
 @RequestMapping("AA/001")
@@ -29,6 +39,21 @@ public class InfoController {
     
     @Autowired
     private EmpPassportService empPassportService;
+    
+    @Autowired
+    private EmpAssignService empAssignService;
+    
+    @Autowired
+    private EmpEmployService empEmployService;
+    
+    @Autowired
+    private EmpPositionService empPositionService;
+    
+    @Autowired
+    private EmpJoinService empJoinService;
+    
+    @Autowired
+    private EmpDutyService empDutyService;
     
     @ModelAttribute("empInfoList")
     public List<EmpInfo> getAllEmpInfoList() {
@@ -45,14 +70,63 @@ public class InfoController {
         return empPassportService.findAll();
     }
     
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public String Index() {
-        return "aa/001/list";
+    @ModelAttribute("empAssignList")
+    public List<EmpAssign> getAllEmpAssignList() {
+        return empAssignService.findAll();
     }
     
+    @ModelAttribute("empEmployList")
+    public List<EmpEmploy> getAllEmpEmployList() {
+        return empEmployService.findAll();
+    }
+    
+    @ModelAttribute("empPositionList")
+    public List<EmpPosition> getAllEmpPositionList() {
+        return empPositionService.findAll();
+    }
+    
+    @ModelAttribute("empJoinList")
+    public List<EmpJoin> getAllEmpJoinList() {
+        return empJoinService.findAll();
+    }
+    
+    @ModelAttribute("empDutyList")
+    public List<EmpDuty> getAllEmpDutyList() {
+        return empDutyService.findAll();
+    }
+    
+    @RequestMapping(value = {"/view", ""}, method = RequestMethod.GET)
+    public String view(Model model) {
+        EmpInfo empInfo                 = empInfoService.findByID(null);
+        EmpResidence empResidence       = empResidenceService.findById(null);
+        EmpPassport empPassport         = empPassportService.findById(null);
+        EmpAssign empAssign             = empAssignService.findById(null);
+        EmpEmploy empEmploy             = empEmployService.findById(null);
+        EmpPosition empPosition         = empPositionService.findById(null);
+        EmpJoin empJoin                 = empJoinService.findById(null);
+        EmpDuty empDuty                 = empDutyService.findById(null);
+        
+        model.addAttribute("empInfo", empInfo);
+        model.addAttribute("empResidence", empResidence);
+        model.addAttribute("empPassport", empPassport);
+        model.addAttribute("empAssign", empAssign);
+        model.addAttribute("empEmploy", empEmploy);
+        model.addAttribute("empPosition", empPosition);
+        model.addAttribute("empJoin", empJoin);
+        model.addAttribute("empDuty", empDuty);
+        
+        return "aa/001/view";
+    }
+    
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String list() {
+        return "aa/001/list";
+    }
+    /*
     @RequestMapping(value="/form", method = RequestMethod.GET)
     public String formInfo(Model model){
             model.addAttribute("empInfo", new EmpInfo());
+            
             return "aa/001/form";
     }
     
@@ -112,4 +186,5 @@ public class InfoController {
         model.asMap().clear();
         return "redirect:/AA/001";
     }
+    */
 }

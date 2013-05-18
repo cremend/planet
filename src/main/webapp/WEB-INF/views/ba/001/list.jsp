@@ -33,12 +33,6 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="data" items="${null}">
-            <tr>
-                <td>${data.code}</td>
-                <td>${data.name}</td>
-            </tr>
-        </c:forEach>
         </tbody>
     </table>
 </div>

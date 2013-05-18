@@ -10,13 +10,16 @@ import com.egrina.planet.web.dao.emp.EmpInfoDao;
 import com.egrina.planet.web.dao.emp.EmpResidenceDao;
 import com.egrina.planet.web.entity.emp.EmpInfo;
 import com.egrina.planet.web.entity.emp.EmpResidence;
+
 @Service
 public class EmpResidenceService {
 
     @Autowired
     private EmpResidenceDao empResidenceDao;
+    
     @Autowired
     private EmpInfoDao empInfoDao;
+    
     @Autowired
     private BasicVisaDao basicVisaDao;
     

@@ -49,6 +49,7 @@ public class EmpResidenceDaoImpl implements EmpResidenceDao{
     }
     
     @Override
+    @Transactional(readOnly = true)
     public EmpResidence findLatest() {
         Query query = entityManager.createQuery("FROM EmpResidence AS a ORDER BY a.empResidencePk DESC");
         query.setMaxResults(1);

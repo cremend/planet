@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.emp.EmpResidence;
 
 @Repository
-public class EmpResidenceDaoImpl implements EmpResidenceDao{
+public class EmpResidenceDaoImpl implements EmpResidenceDao {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -47,8 +47,9 @@ public class EmpResidenceDaoImpl implements EmpResidenceDao{
             return entityManager.merge(empResidence);
         }
     }
-    
+
     @Override
+    @Transactional(readOnly = true)
     public EmpResidence findLatest() {
         Query query = entityManager.createQuery("FROM EmpResidence AS a ORDER BY a.empResidencePk DESC");
         query.setMaxResults(1);

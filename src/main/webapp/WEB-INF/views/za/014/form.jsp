@@ -6,38 +6,31 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@include file="../../template/header.jsp" %>
+<%@include file="../template/side.jsp" %>
 
-<c:url var="root" value="/"/>
 <c:url var="listUrl" value="/ZA/014"/>
 <c:url var="submitUrl" value="/ZA/014/form/${jobCategory.basicJobCategoryCode}"/>
 
-<html>
-<head>
-    <title>PLANET_ZA014</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="${root}resources/css/style01.css"/>
-</head>
-<body>
-<header>
-    <h2>PLANET_ZA014</h2>
+<div class="ui-layout-center">
+    <header>
+        <h2>PLANET_ZA014</h2>
 
-    <p>업무형태 입력폼</p>
+        <p>업무형태 입력폼</p>
 
-    <p>/za/014/form.jsp</p>
-</header>
-<hr/>
+        <p>/za/014/form.jsp</p>
+    </header>
+    <hr/>
 
-<div class="buttonArea">
-    <button onclick="location.href='${listUrl}'" class="button1">Back</button>
+    <div class="buttonArea">
+        <button onclick="location.href='${listUrl}'" class="button1">Back</button>
+    </div>
+
+    <f:form method="post" action="${submitUrl}" modelAttribute="jobCategory">
+        <label for="name">Name</label>
+        <f:input path="basicJobCategoryName" id="name"/>
+        <input type="submit" class="button1"/>
+    </f:form>
 </div>
 
-<f:form method="post" action="${submitUrl}" modelAttribute="jobCategory">
-    <label for="name">Name</label>
-    <f:input path="basicJobCategoryName" id="name"/>
-    <input type="submit" class="button1"/>
-</f:form>
-</body>
-</html>
+<%@include file="../../template/footer.jsp" %>

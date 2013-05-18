@@ -1,0 +1,43 @@
+@CHARSET "utf-8";
+
+div.nav {
+}
+
+div.nav ul {
+}
+
+div.nav ul li {
+    float: left;
+}
+
+div.nav ul li a {
+    display: block;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid gray;
+}
+
+div.nav ul li:last-child a {
+    border-right: none;
+}
+
+div#side ul {
+
+}
+
+div#side ul li {
+
+}
+
+div#side ul li a {
+    display: block;
+    background-color: #c8d7dc;
+    border-bottom: 1px solid gray;
+    padding: 10px;
+}
+
+div#side ul li:last-child a {
+    border-bottom: none;
+}

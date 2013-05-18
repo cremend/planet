@@ -1,25 +1,24 @@
 <%--
   Created by IntelliJ IDEA.
   User: xperad
-  Date: 西暦.13/03/31
-  Time: 0:47
+  Date: AD.13/05/18
+  Time: 21:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../../template/header.jsp" %>
 <%@include file="../template/side.jsp" %>
 
-<c:url var="addUrl" value="/AA/001/form"/>
+<c:url var="addUrl" value="/BA/001/form"/>
 
 <div class="ui-layout-center">
     <header>
-        <h2>PLANET_AA001</h2>
+        <h2>PLANET_BA001</h2>
 
-        <p>사원 리스트</p>
+        <p>계약 일람</p>
 
-        <p>/aa/001/list.jsp</p>
+        <p>/ba/001/list.jsp</p>
     </header>
-
     <hr/>
 
     <div class="buttonArea">
@@ -34,14 +33,12 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="empInfo" items="${empInfoList}">
+        <c:forEach var="data" items="${null}">
             <tr>
-                <td>${empInfo.empCode}</td>
-                <td>${empInfo.empName}</td>
+                <td>${data.code}</td>
+                <td>${data.name}</td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
 </div>
-
-<%@include file="../../template/footer.jsp" %>

@@ -3,4 +3,6 @@
 .project
 .classpath
 /.idea
-.iml
+*.iml
+*.ipr
+*.iws

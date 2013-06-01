@@ -55,65 +55,65 @@ public class InfoController {
 //    @Autowired
 //    private EmpDutyService empDutyService;
 
-    @ModelAttribute("empInfoList")
+    @ModelAttribute("empInfoListAll")
     public List<EmpInfo> getAllEmpInfoList() {
         return empInfoService.findAll();
     }
 
-    @ModelAttribute("empResidenceList")
+    @ModelAttribute("empResidenceListAll")
     public List<EmpResidence> getAllEmpResidenceList() {
         return empResidenceService.findAll();
     }
 
-    @ModelAttribute("empPassportList")
+    @ModelAttribute("EmpPassportListAll")
     public List<EmpPassport> getAllEmpPassportList() {
         return empPassportService.findAll();
     }
 
-    @ModelAttribute("empAssignList")
+    @ModelAttribute("empAssignListAll")
     public List<EmpAssign> getAllEmpAssignList() {
         return empAssignService.findAll();
     }
 
-    @ModelAttribute("empEmployList")
+    @ModelAttribute("empEmployListAll")
     public List<EmpEmploy> getAllEmpEmployList() {
         return empEmployService.findAll();
     }
 
-//    @ModelAttribute("empPositionList")
+//    @ModelAttribute("empPositionListAll")
 //    public List<EmpPosition> getAllEmpPositionList() {
 //        return empPositionService.findAll();
 //    }
 
-//    @ModelAttribute("empJoinList")
+//    @ModelAttribute("empJoinListAll")
 //    public List<EmpJoin> getAllEmpJoinList() {
 //        return empJoinService.findAll();
 //    }
 
-//    @ModelAttribute("empDutyList")
+//    @ModelAttribute("empDutyListAll")
 //    public List<EmpDuty> getAllEmpDutyList() {
 //        return empDutyService.findAll();
 //    }
 
-    @RequestMapping(value = {"/view", ""}, method = RequestMethod.GET)
-    public String view(Model model) {
-//        EmpInfo empInfo                 = empInfoService.findByID(null);
-//        EmpResidence empResidence       = empResidenceService.findById(null);
-//        EmpPassport empPassport         = empPassportService.findById(null);
-//        EmpAssign empAssign             = empAssignService.findById(null);
-//        EmpEmploy empEmploy             = empEmployService.findById(null);
-//        EmpPosition empPosition         = empPositionService.findById(null);
-//        EmpJoin empJoin                 = empJoinService.findById(null);
-//        EmpDuty empDuty                 = empDutyService.findById(null);
+    @RequestMapping(value = {"/view/{empCode}"}, method = RequestMethod.GET)
+    public String view(@PathVariable(value = "empCode") String empCode, Model model) {
+        EmpInfo empInfo = empInfoService.findById(empCode);
+//        List<EmpResidence> empResidenceList = empResidenceService.findAllByEmpCode(empCode);
+        List<EmpPassport> empPassportList = empPassportService.findAllByEmpCode(empCode);
+//        List<EmpAssign> empAssignList = empAssignService.findAllByEmpCode(empCode);
+//        List<EmpEmploy> empEmployList = empEmployService.findAllByEmpCode(empCode);
+//        List<EmpPosition> empPositionList = empPositionService.findAllByEmpCode(empCode);
+//        List<EmpJoin> empJoinList = empJoinService.findAllByEmpCode(empCode);
+//        List<EmpDuty> empDutyList = empDutyService.findAllByEmpCode(empCode);
 
-//        model.addAttribute("empInfo", empInfo);
-//        model.addAttribute("empResidence", empResidence);
-//        model.addAttribute("empPassport", empPassport);
-//        model.addAttribute("empAssign", empAssign);
-//        model.addAttribute("empEmploy", empEmploy);
-//        model.addAttribute("empPosition", empPosition);
-//        model.addAttribute("empJoin", empJoin);
-//        model.addAttribute("empDuty", empDuty);
+        model.addAttribute("empInfo", empInfo);
+//        model.addAttribute("empResidenceList", empResidenceList);
+        model.addAttribute("empPassportList", empPassportList);
+//        model.addAttribute("empAssignList", empAssignList);
+//        model.addAttribute("empEmployList", empEmployList);
+//        model.addAttribute("empPositionList", empPositionList);
+//        model.addAttribute("empJoinList", empJoinList);
+//        model.addAttribute("empDutyList", empDutyList);
 
         return "aa/001/view";
     }

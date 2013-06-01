@@ -43,14 +43,14 @@ public class ZipController {
         return "redirect:/ZA/008";
     }
 
-    @RequestMapping(value = "/form/{ZipCode}", method = RequestMethod.GET)
-    public String form(@PathVariable(value = "ZipCode") Integer zipCode, Model model) {
+    @RequestMapping(value = "/form/{zipCode}", method = RequestMethod.GET)
+    public String form(@PathVariable(value = "zipCode") String zipCode, Model model) {
         model.addAttribute("zip", basicZipDao.findById(zipCode));
         return "za/008/form";
     }
 
-    @RequestMapping(value = "/form/{ZipCode}", method = RequestMethod.POST)
-    public String form(@PathVariable(value = "ZipCode") Integer zipCode, @ModelAttribute("zip") BasicZip zip, Model model) {
+    @RequestMapping(value = "/form/{zipCode}", method = RequestMethod.POST)
+    public String form(@PathVariable(value = "zipCode") String zipCode, @ModelAttribute("zip") BasicZip zip, Model model) {
         zip.setBasicZipCode(zipCode);
         basicZipDao.save(zip);
         model.addAttribute("zipList", getAllZipList());
@@ -58,8 +58,8 @@ public class ZipController {
         return "redirect:/ZA/008";
     }
 
-    @RequestMapping(value = "/delete/{ZipCode}", method = RequestMethod.GET)
-    public String delete(@PathVariable(value = "ZipCode") Integer zipCode, Model model) {
+    @RequestMapping(value = "/delete/{zipCode}", method = RequestMethod.GET)
+    public String delete(@PathVariable(value = "zipCode") String zipCode, Model model) {
         basicZipDao.delete(zipCode);
         model.asMap().clear();
         return "redirect:/ZA/008";

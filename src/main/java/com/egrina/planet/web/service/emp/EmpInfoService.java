@@ -49,17 +49,18 @@ public class EmpInfoService {
             }
             // 5. setEmpCode(newCode) to empInfo Instance.
             empInfo.setEmpCode(tempEmpCode3);
-            empInfo.setBasicZipCode(basicZipDao.findById(1));
+            empInfo.setBasicZipCode(basicZipDao.findById("100-0001"));
             empInfoDao.save(empInfo);
         }
         return empInfo;
     }
-    public EmpInfo findByID(String empCode){
-       return empInfoDao.findById(empCode);
+
+    public EmpInfo findById(String empCode) {
+        return empInfoDao.findById(empCode);
     }
-    
-    public void delete(String empCode){
-      empInfoDao.delete(empCode);
+
+    public void delete(String empCode) {
+        empInfoDao.delete(empCode);
     }
 
 }

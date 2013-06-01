@@ -16,9 +16,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script type="text/javascript" src="${root}resources/js/libs/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="${root}resources/js/libs/jquery.layout-1.3.0.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
     <script type="text/javascript" src="${root}resources/js/layoutSetting.js"></script>
     <script type="text/javascript" src="${root}resources/js/navigation.js"></script>
+
     <link rel="stylesheet" type="text/css" href="${root}resources/css/jquery-layout-ui.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+
     <link rel="stylesheet" type="text/css" href="${root}resources/css/style01.css"/>
     <link rel="stylesheet" type="text/css" href="${root}resources/css/design.css"/>
     <script>

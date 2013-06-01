@@ -27,6 +27,8 @@
     </div>
 
     <f:form method="post" action="${submitUrl}" modelAttribute="zip">
+        <label for="code">Code</label>
+        <f:input path="basicZipCode" id="code"/>
         <label for="name">Name</label>
         <f:input path="basicZipName" id="name"/>
         <input type="submit" class="button1"/>

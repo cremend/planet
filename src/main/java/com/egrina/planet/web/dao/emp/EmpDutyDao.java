@@ -11,4 +11,6 @@ public interface EmpDutyDao {
     public void delete(Integer empDutyPk);
 
     public EmpDuty save(EmpDuty empDuty);
+    
+    public List<EmpDuty> findAllByEmpCode(String empCode);
 }

@@ -94,6 +94,9 @@ public class EmpInfo {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
     private List<EmpEmploy> empEmployList;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
+    private List<EmpEmploy> empAssignList;
 
     // 20130309追加
     // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")

@@ -3,8 +3,11 @@ package com.egrina.planet.web.entity.emp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +19,9 @@ public class EmpAssign {
     @Column(name = "EMP_ASSIGN_PK")
     private Integer empAssignPk;
 
-    @Column(name = "EMP_CODE")
-    private String empCode;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EMP_CODE", nullable = false)
+    private EmpInfo empInfo;
 
     @Column(name = "EMP_TEAM_CODE")
     private String empTeamCode;
@@ -42,12 +46,12 @@ public class EmpAssign {
         this.empAssignPk = empAssignPk;
     }
 
-    public String getEmpCode() {
-        return empCode;
+    public EmpInfo getEmpInfo() {
+        return empInfo;
     }
 
-    public void setEmpCode(String empCode) {
-        this.empCode = empCode;
+    public void setEmpInfo(EmpInfo empInfo) {
+        this.empInfo = empInfo;
     }
 
     public String getEmpTeamCode() {

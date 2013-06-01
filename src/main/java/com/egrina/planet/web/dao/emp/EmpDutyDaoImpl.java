@@ -8,6 +8,7 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.egrina.planet.web.entity.emp.EmpDuty;
 
 @Repository
@@ -45,5 +46,12 @@ public class EmpDutyDaoImpl implements EmpDutyDao {
         } else {
             return entityManager.merge(empDuty);
         }
+    }
+    
+    @Override
+    public List<EmpDuty> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpDuty AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empDutyPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
     }
 }

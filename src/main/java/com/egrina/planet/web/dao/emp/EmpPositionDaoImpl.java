@@ -47,4 +47,11 @@ public class EmpPositionDaoImpl implements EmpPositionDao{
             return entityManager.merge(empPosition);
         }
     }
+    
+    @Override
+    public List<EmpPosition> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpPosition AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empPositionPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
+    }
 }

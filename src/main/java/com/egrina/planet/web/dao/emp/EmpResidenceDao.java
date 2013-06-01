@@ -2,7 +2,6 @@ package com.egrina.planet.web.dao.emp;
 
 import java.util.List;
 
-import com.egrina.planet.web.entity.emp.EmpInfo;
 import com.egrina.planet.web.entity.emp.EmpResidence;
 
 public interface EmpResidenceDao {
@@ -16,4 +15,6 @@ public interface EmpResidenceDao {
     public EmpResidence save(EmpResidence empResidence);
     
     public EmpResidence findLatest();
+    
+    public List<EmpResidence> findAllByEmpCode(String empCode);
 }

@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.egrina.planet.web.entity.emp.EmpHoliday;
 import com.egrina.planet.web.entity.emp.EmpJoin;;
 
 @Repository
@@ -48,5 +47,12 @@ public class EmpJoinDaoImpl implements EmpJoinDao {
         } else {
             return entityManager.merge(empJoin);
         }
+    }
+    
+    @Override
+    public List<EmpJoin> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpJoin AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empJoinPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
     }
 }

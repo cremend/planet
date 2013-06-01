@@ -8,7 +8,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.egrina.planet.web.entity.emp.EmpAssign;
-import com.egrina.planet.web.entity.emp.EmpResidence;
+
 
 @Repository
 public class EmpAssignDaoImpl implements EmpAssignDao {
@@ -52,5 +52,12 @@ public class EmpAssignDaoImpl implements EmpAssignDao {
         Query query = entityManager.createQuery("FROM EmpAssign AS a ORDER BY a.empAssignPk DESC");
         query.setMaxResults(1);
         return (EmpAssign) query.getSingleResult();
+    }
+    
+    @Override
+    public List<EmpAssign> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpAssign AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empAssignPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
     }
 }

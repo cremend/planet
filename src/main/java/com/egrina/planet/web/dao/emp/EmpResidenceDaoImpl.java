@@ -55,4 +55,11 @@ public class EmpResidenceDaoImpl implements EmpResidenceDao {
         query.setMaxResults(1);
         return (EmpResidence) query.getSingleResult();
     }
+    
+    @Override
+    public List<EmpResidence> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpResidence AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empResidencePk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
+    }
 }

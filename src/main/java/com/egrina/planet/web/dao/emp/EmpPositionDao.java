@@ -14,5 +14,8 @@ public interface EmpPositionDao {
 
     public EmpPosition save(EmpPosition empPosition);
     
+    public EmpPosition findLatest();
+    
     public List<EmpPosition> findAllByEmpCode(String empCode);
+
 }

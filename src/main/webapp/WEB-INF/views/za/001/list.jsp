@@ -22,6 +22,9 @@
 
     <hr/>
 
+    ${position.basicPositionCode}
+    ${position.basicPositionName}
+
     <div class="buttonArea">
         <button onclick="location.href='${addUrl}'" class="button1">Add</button>
     </div>

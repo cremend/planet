@@ -141,6 +141,21 @@ table.table-style1 > tbody > tr > td:last-child {
     border-right: none;
 }
 
+/* DL Skin */
+dl.dtd-style1 {
+}
+
+dl.dtd-style1 > dt {
+    background-color: darkolivegreen;
+    color: white;
+}
+
+dl.dtd-style1 > dd {
+}
+
+dl.dtd-style1 > dd:after {
+}
+
 div.buttonArea {
     display: inline-block;
     margin: .5em 0;

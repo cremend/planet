@@ -94,9 +94,9 @@ public class EmpInfo {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
     private List<EmpEmploy> empEmployList;
-    
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "empInfo")
-    private List<EmpEmploy> empAssignList;
+    private List<EmpAssign> empAssignList;
 
     // 20130309追加
     // @OneToMany(fetch=FetchType.LAZY, mappedBy="empInfo1")
@@ -126,6 +126,14 @@ public class EmpInfo {
 
     public void setEmpCode(String empCode) {
         this.empCode = empCode;
+    }
+
+    public List<EmpAssign> getEmpAssignList() {
+        return empAssignList;
+    }
+
+    public void setEmpAssignList(List<EmpAssign> empAssignList) {
+        this.empAssignList = empAssignList;
     }
 
     public String getEmpName() {

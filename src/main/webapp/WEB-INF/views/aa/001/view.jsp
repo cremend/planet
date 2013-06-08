@@ -28,7 +28,7 @@
             <li><a href="#tabs-3">사원정보</a></li>
         </ul>--%>
 
-        <div id="tabs-1">
+        <dl id="tabs-1" class="dtd-style1">
             <dt>사원코드</dt>
             <dd>${empInfo.empCode}</dd>
             <dt>사원명</dt>
@@ -49,7 +49,7 @@
             <dd>${empInfo.empEmail}</dd>
             <dt>회사이메일</dt>
             <dd>${empInfo.empEmail2}</dd>
-        </div>
+        </dl>
 
         <div id="tabs-2">
             <table class="table-style1">

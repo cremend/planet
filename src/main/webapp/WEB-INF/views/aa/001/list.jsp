@@ -29,15 +29,19 @@
     <table class="table-style1">
         <thead>
         <tr>
-            <th>Code</th>
-            <th>Name</th>
+            <th>사원번호</th>
+            <th>사원명</th>
+            <th>그룹명</th>
+            <th>팀명</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="empInfo" items="${empInfoList}">
             <tr>
-                <td>${empInfo.empCode}</td>
+                <td>${empInfo.empJoinList[empInfo.empJoinList.size()-1].empJoinNumber}</td>
                 <td>${empInfo.empName}</td>
+                <td>${empInfo.empAssignList[empInfo.empAssignList.size()-1].empGroupCode}</td>
+                <td>${empInfo.empAssignList[empInfo.empAssignList.size()-1].empTeamCode}</td>
             </tr>
         </c:forEach>
         </tbody>

@@ -75,7 +75,7 @@ public class InfoController {
         return empAssignService.findAll();
     }
 
-    @ModelAttribute("empEmployListAll")
+
     public List<EmpEmploy> getAllEmpEmployList() {
         return empEmployService.findAll();
     }
@@ -118,8 +118,9 @@ public class InfoController {
         return "aa/001/view";
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list() {
+    @RequestMapping(value = {"/list", ""}, method = RequestMethod.GET)
+    public String list(Model model) {
+        model.addAttribute("empInfoList", empInfoService.findAll());
         return "aa/001/list";
     }
     /*

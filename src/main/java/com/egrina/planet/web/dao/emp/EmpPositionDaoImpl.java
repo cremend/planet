@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.egrina.planet.web.entity.emp.EmpPassport;
 import com.egrina.planet.web.entity.emp.EmpPosition;
 
 @Repository
@@ -46,5 +47,12 @@ public class EmpPositionDaoImpl implements EmpPositionDao{
         } else {
             return entityManager.merge(empPosition);
         }
+    }
+    
+    @Override
+    public EmpPosition findLatest() {
+        Query query = entityManager.createQuery("FROM EmpPosition AS a ORDER BY a.empPositionPk DESC");
+        query.setMaxResults(1);
+        return (EmpPosition) query.getSingleResult();
     }
 }

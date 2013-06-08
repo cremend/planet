@@ -13,4 +13,6 @@ public interface EmpPositionDao {
     public void delete(Integer EmpPositionPk);
 
     public EmpPosition save(EmpPosition empPosition);
+    
+    public EmpPosition findLatest();
 }

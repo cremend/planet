@@ -8,31 +8,33 @@ import org.springframework.stereotype.Service;
 import com.egrina.planet.web.dao.emp.EmpInfoDao;
 import com.egrina.planet.web.dao.emp.EmpPassportDao;
 import com.egrina.planet.web.entity.emp.EmpPassport;
+
 @Service
 public class EmpPassportService {
 
     @Autowired
     private EmpPassportDao empPassportDao;
+
     @Autowired
     private EmpInfoDao empInfoDao;
-    
-    public List<EmpPassport> findAll(){
+
+    public List<EmpPassport> findAll() {
         return empPassportDao.findAll();
     }
-    
-    public EmpPassport findById(Integer empPassportPk){
+
+    public EmpPassport findById(Integer empPassportPk) {
         return empPassportDao.findById(empPassportPk);
     }
 
-    public void delete(Integer empPassportPk){
+    public void delete(Integer empPassportPk) {
         empPassportDao.delete(empPassportPk);
     }
 
-    public EmpPassport save(EmpPassport empPassport){
-        if(empPassport.getEmpPassportPk()!=null){
-         // update
+    public EmpPassport save(EmpPassport empPassport) {
+        if (empPassport.getEmpPassportPk() != null) {
+            // update
             empPassportDao.save(empPassport);
-        }else{
+        } else {
             // insert
             // Create New Code
             // 1. get Latest Record from t_emp_info
@@ -50,5 +52,9 @@ public class EmpPassportService {
             empPassportDao.save(empPassport);
         }
         return empPassport;
+    }
+
+    public List<EmpPassport> findAllByEmpCode(String empCode) {
+        return empPassportDao.findAllByEmpCode(empCode);
     }
 }

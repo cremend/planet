@@ -1,6 +1,7 @@
 package com.egrina.planet.web.dao.emp;
 
 import java.util.List;
+
 import com.egrina.planet.web.entity.emp.EmpEmploy;
 
 public interface EmpEmployDao {
@@ -13,4 +14,6 @@ public interface EmpEmployDao {
     public EmpEmploy save(EmpEmploy empEmploy);
     
     public EmpEmploy findLatest();
+    
+    public List<EmpEmploy> findAllByEmpCode(String empCode);
 }

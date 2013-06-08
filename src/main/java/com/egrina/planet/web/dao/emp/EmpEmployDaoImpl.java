@@ -8,8 +8,9 @@ import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.egrina.planet.web.entity.emp.EmpEmploy;
-import com.egrina.planet.web.entity.emp.EmpPassport;
+
 
 @Repository
 public class EmpEmployDaoImpl implements EmpEmployDao {
@@ -53,5 +54,12 @@ public class EmpEmployDaoImpl implements EmpEmployDao {
         Query query = entityManager.createQuery("FROM EmpEmploy AS a ORDER BY a.empEmployPk DESC");
         query.setMaxResults(1);
         return (EmpEmploy) query.getSingleResult();
+    }
+    
+    @Override
+    public List<EmpEmploy> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpEmploy AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empEmployPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
     }
 }

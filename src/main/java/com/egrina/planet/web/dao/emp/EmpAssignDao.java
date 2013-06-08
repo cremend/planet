@@ -15,4 +15,6 @@ public interface EmpAssignDao {
     public EmpAssign save(EmpAssign empAssign);
     
     public EmpAssign findLatest();
+    
+    public List<EmpAssign> findAllByEmpCode(String empCode);
 }

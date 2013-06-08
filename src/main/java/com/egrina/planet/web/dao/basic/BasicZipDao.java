@@ -6,9 +6,9 @@ import com.egrina.planet.web.entity.basic.*;
 public interface BasicZipDao {
     public List<BasicZip> findAll();
 
-    public BasicZip findById(Integer basicZipCode);
+    public BasicZip findById(String basicZipCode);
 
-    public void delete(Integer basicZipCode);
+    public void delete(String basicZipCode);
 
     public BasicZip save(BasicZip basicZip);
 }

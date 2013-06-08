@@ -16,9 +16,8 @@ import com.egrina.planet.web.entity.emp.*;
 public class BasicZip {
 
     @Id
-    @GeneratedValue
     @Column(name = "BASIC_ZIP_CODE")
-    private Integer basicZipCode;
+    private String basicZipCode;
 
     @Column(name = "BASIC_ZIP_NAME")
     private String basicZipName;
@@ -29,11 +28,11 @@ public class BasicZip {
     public BasicZip() {
     }
 
-    public Integer getBasicZipCode() {
+    public String getBasicZipCode() {
         return basicZipCode;
     }
 
-    public void setBasicZipCode(Integer basicZipCode) {
+    public void setBasicZipCode(String basicZipCode) {
         this.basicZipCode = basicZipCode;
     }
 

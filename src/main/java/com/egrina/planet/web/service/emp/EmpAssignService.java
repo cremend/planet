@@ -10,6 +10,7 @@ import com.egrina.planet.web.dao.basic.BasicTeamDao;
 import com.egrina.planet.web.dao.emp.EmpAssignDao;
 import com.egrina.planet.web.dao.emp.EmpInfoDao;
 import com.egrina.planet.web.entity.emp.EmpAssign;
+import com.egrina.planet.web.entity.emp.EmpPassport;
 
 @Service
 public class EmpAssignService {
@@ -56,5 +57,9 @@ public class EmpAssignService {
             empAssignDao.save(empAssign);
         }
         return empAssign;
+    }
+    
+    public List<EmpAssign> findAllByEmpCode(String empCode) {
+        return empAssignDao.findAllByEmpCode(empCode);
     }
 }

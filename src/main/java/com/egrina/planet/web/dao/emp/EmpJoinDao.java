@@ -12,4 +12,6 @@ public interface EmpJoinDao {
     public void delete(Integer empJoinPk);
 
     public EmpJoin save(EmpJoin empJoin);
+    
+    public List<EmpJoin> findAllByEmpCode(String empCode);
 }

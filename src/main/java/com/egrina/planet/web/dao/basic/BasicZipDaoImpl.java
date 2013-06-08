@@ -24,13 +24,13 @@ public class BasicZipDaoImpl implements BasicZipDao {
 
     @Override
     @Transactional(readOnly = true)
-    public BasicZip findById(Integer basicZipCode) {
+    public BasicZip findById(String basicZipCode) {
         return entityManager.find(BasicZip.class, basicZipCode);
     }
 
     @Override
     @Transactional
-    public void delete(Integer basicZipCode) {
+    public void delete(String basicZipCode) {
         BasicZip basisZip = entityManager.find(BasicZip.class, basicZipCode);
         entityManager.remove(basisZip);
     }

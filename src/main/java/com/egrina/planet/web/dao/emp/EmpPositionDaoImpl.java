@@ -13,7 +13,7 @@ import com.egrina.planet.web.entity.emp.EmpPassport;
 import com.egrina.planet.web.entity.emp.EmpPosition;
 
 @Repository
-public class EmpPositionDaoImpl implements EmpPositionDao{
+public class EmpPositionDaoImpl implements EmpPositionDao {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -48,11 +48,20 @@ public class EmpPositionDaoImpl implements EmpPositionDao{
             return entityManager.merge(empPosition);
         }
     }
-    
+
     @Override
+    @Transactional(readOnly = true)
     public EmpPosition findLatest() {
         Query query = entityManager.createQuery("FROM EmpPosition AS a ORDER BY a.empPositionPk DESC");
         query.setMaxResults(1);
         return (EmpPosition) query.getSingleResult();
+    }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<EmpPosition> findAllByEmpCode(String empCode) {
+        Query query = entityManager.createQuery("FROM EmpPosition AS a WHERE a.empInfo.empCode = :empCode ORDER BY a.empPositionPk");
+        query.setParameter("empCode", empCode);
+        return query.getResultList();
     }
 }
